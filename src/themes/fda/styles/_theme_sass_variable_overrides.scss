@@ -70,7 +70,7 @@ $yiq-contrasted-threshold: 170;
 
 $body-color: #343a40;       // As Bootstrap $gray-800
 
-$link-color: #1e6f90;       // Blue green, as DSpace $info
+$link-color: #57068c;       // NYU Violet
 $link-decoration: none;
 $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: underline;
@@ -83,8 +83,8 @@ $navbar-dark-color: #fff;
 
 /*** CUSTOM DSPACE VARIABLES ***/
 
-$ds-home-news-link-color: #D2FC93;
-$ds-header-navbar-border-bottom-color: #92c642;
+$ds-home-news-link-color: #57068c;
+$ds-header-navbar-border-bottom-color: #57068c;
 
 $ds-breadcrumb-link-color: #154E66 !default;
 $ds-breadcrumb-link-active-color: #040D11 !default;

@@ -5,6 +5,10 @@
     color: white;
     position: relative;
     font-weight: 600;
+    a {
+      color: white;
+      text-decoration: underline;
+    }
 
     .background-image > img {
       background-color: var(--bs-info);
@@ -32,13 +36,13 @@
       }
 
       &:before {
-        background: linear-gradient(to left, var(--ds-banner-text-background), transparent);
+        background-color: var(--ds-banner-text-background);
         left: calc(-1 * var(--ds-banner-background-gradient-width));
 
       }
 
       &:after {
-        background: linear-gradient(to right, var(--ds-banner-text-background), transparent);
+        background-color: var(--ds-banner-text-background);
         right: calc(-1 * var(--ds-banner-background-gradient-width));
       }
 
