@@ -40,7 +40,7 @@ jobs:
       COMPOSE_PROJECT_NAME: 'ci'
       # Docker Registry to use for Docker compose scripts below.
       # We use GitHub's Container Registry to avoid aggressive rate limits at DockerHub.
-      DOCKER_REGISTRY: ghcr.io
+      DOCKER_REGISTRY: docker.io
     strategy:
       # Create a matrix of Node versions to test against (in parallel)
       matrix:
