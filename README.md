@@ -1,59 +1,76 @@
-[![Build Status](https://github.com/DSpace/dspace-angular/workflows/Build/badge.svg?branch=main)](https://github.com/DSpace/dspace-angular/actions?query=workflow%3ABuild) [![Coverage Status](https://codecov.io/gh/DSpace/dspace-angular/branch/main/graph/badge.svg)](https://codecov.io/gh/DSpace/dspace-angular) [![Universal Angular](https://img.shields.io/badge/universal-angular2-brightgreen.svg?style=flat)](https://github.com/angular/universal)
-
-dspace-angular
-==============
-
-> The DSpace User Interface built on [Angular](https://angular.io/), written in [TypeScript](https://www.typescriptlang.org/) and using [Angular Universal](https://angular.io/guide/universal).
-
 Overview
 --------
 
-DSpace open source software is a turnkey repository application used by more than
-2,000 organizations and institutions worldwide to provide durable access to digital resources.
-For more information, visit http://www.dspace.org/
+Faculty Digital Archive is a repository of NYU scholarship, allowing digital works—text, audio, video, data, and more—to be reliably shared and securely stored. Faculty Digital Archive uses DSpace open source software.
+This repositoy is a fork of Dspace version 8. 
 
-DSpace consists of both a Java-based backend and an Angular-based frontend.
+Faculty Digital Archive consists of both a Java-based backend and an Angular-based frontend.
 
-* Backend (https://github.com/DSpace/DSpace/) provides a REST API, along with other machine-based interfaces (e.g. OAI-PMH, SWORD, etc)
+* Backend (https://github.com/nyudlts/fda8 which is a fork of https://github.com/DSpace/DSpace) provides a REST API, along with other machine-based interfaces (e.g. OAI-PMH, SWORD, etc)
     * The REST Contract is at https://github.com/DSpace/RestContract
 * Frontend (this codebase) is the User Interface built on the REST API
 
-Downloads
----------
+For more information about DSpace, visit http://www.dspace.org/
 
-* Backend (REST API): https://github.com/DSpace/DSpace/releases
-* Frontend (User Interface): https://github.com/DSpace/dspace-angular/releases
+Detailed Documentation for  DSpace 8 release may be viewed online or downloaded via  [Documentation Wiki](https://wiki.lyrasis.org/display/DSDOC8x).
 
-
-## Documentation / Installation
-
-Documentation for each release may be viewed online or downloaded via our [Documentation Wiki](https://wiki.lyrasis.org/display/DSDOC/).
-
-The latest DSpace Installation instructions are available at:
-https://wiki.lyrasis.org/display/DSDOC7x/Installing+DSpace
+Instructions provided below are mostly copied from upstream [dspace-angular](https://github.com/DSpace/dspace-angular) repository with some local modifications
 
 Quick start
 -----------
 
-**Ensure you're running [Node](https://nodejs.org) `v18.x` or `v20.x`, [npm](https://www.npmjs.com/) >= `v10.x` and [yarn](https://yarnpkg.com) == `v1.x`**
+**Ensure you're running [Node](https://nodejs.org) `v18.x` or `v20.x`, [npm](https://www.npmjs.com/) >= `v10.x`**
 
 ```bash
 # clone the repo
-git clone https://github.com/DSpace/dspace-angular.git
+git clone https://github.com/DSpace/fda8-angular.git
 
 # change directory to our repo
-cd dspace-angular
+cd fda8-angular
 
 # install the local dependencies
 yarn install
 
-# start the server
-yarn start
+# start the server in development mode
+yarn start:dev
 ```
 
 Then go to [http://localhost:4000](http://localhost:4000) in your browser
 
-Not sure where to start? watch the training videos linked in the [Introduction to the technology](#introduction-to-the-technology) section below.
+By default your application uses DSpace Demo REST API. 
+
+### 🔧 Connect to Local Faculty Digital Archive REST API
+
+To point the Angular UI to your **locally running FDA REST API**, you need to override the default configuration.
+
+The fastest way is to create a file called:
+
+```
+config/config.development.yaml
+```
+
+And add the following content:
+
+```yaml
+rest:
+  ssl: false
+  host: localhost
+  port: 8080
+  nameSpace: /server
+```
+
+> This tells the frontend to connect to `http://localhost:8080/server/api`, which should be the base URL of your locally running FDA REST API.
+
+Then, start the Angular dev server using:
+
+```bash
+yarn start:dev
+```
+
+Instructions on how to install REST API locally can be found [here](https://github.com/nyudlts/fda8)
+
+
+
 
 Table of Contents
 -----------------
