@@ -31,7 +31,7 @@
 
   "error-page.description.404": "Page not found",
 
-  "error-page.orcid.generic-error": "An error occurred during login via ORCID. Make sure you have shared your ORCID account email address with DSpace. If the error persists, contact the administrator",
+  "error-page.orcid.generic-error": "An error occurred during login via ORCID. Make sure you have shared your ORCID account email address with FDA. If the error persists, contact the administrator",
 
   "listelement.badge.access-status": "Access status:",
 
@@ -151,7 +151,7 @@
 
   "admin.registries.metadata.breadcrumbs": "Metadata registry",
 
-  "admin.registries.metadata.description": "The metadata registry maintains a list of all metadata fields available in the repository. These fields may be divided amongst multiple schemas. However, DSpace requires the qualified Dublin Core schema.",
+  "admin.registries.metadata.description": "The metadata registry maintains a list of all metadata fields available in the repository. These fields may be divided amongst multiple schemas. However, FDA requires the qualified Dublin Core schema.",
 
   "admin.registries.metadata.form.create": "Create metadata schema",
 
@@ -1755,7 +1755,7 @@
 
   "dso-selector.set-scope.community.head": "Select a search scope",
 
-  "dso-selector.set-scope.community.button": "Search all of DSpace",
+  "dso-selector.set-scope.community.button": "Search all repository",
 
   "dso-selector.set-scope.community.or-divider": "or",
 
@@ -3287,7 +3287,7 @@
 
   "menu.header.admin": "Management",
 
-  "menu.header.image.logo": "Repository logo",
+  "menu.header.image.logo": "Faculty Digital Archive",
 
   "menu.header.admin.description": "Management menu",
 
@@ -3317,7 +3317,7 @@
 
   "menu.section.browse_community_by_title": "By Title",
 
-  "menu.section.browse_global": "All of DSpace",
+  "menu.section.browse_global": "Browse",
 
   "menu.section.browse_global_by_author": "By Author",
 
@@ -3465,7 +3465,7 @@
 
   "metadata-export-search.submit.error": "Starting the export has failed",
 
-  "mydspace.breadcrumbs": "MyDSpace",
+  "mydspace.breadcrumbs": "myFDA",
 
   "mydspace.description": "",
 
@@ -3519,7 +3519,7 @@
 
   "mydspace.results.no-uri": "No URI",
 
-  "mydspace.search-form.placeholder": "Search in MyDSpace...",
+  "mydspace.search-form.placeholder": "Search Repository...",
 
   "mydspace.show.workflow": "Workflow tasks",
 
@@ -3527,7 +3527,7 @@
 
   "mydspace.show.supervisedWorkspace": "Supervised items",
 
-  "mydspace.status": "My DSpace status:",
+  "mydspace.status": "My status:",
 
   "mydspace.status.mydspaceArchived": "Archived",
 
@@ -3539,7 +3539,7 @@
 
   "mydspace.status.mydspaceWorkspace": "Workspace",
 
-  "mydspace.title": "MyDSpace",
+  "mydspace.title": "MyFDA",
 
   "mydspace.upload.upload-failed": "Error creating new workspace. Please verify the content uploaded before retry.",
 
@@ -3559,7 +3559,7 @@
 
   "notification.suggestion.please": "Please",
 
-  "nav.browse.header": "All of DSpace",
+  "nav.browse.header": "Browse all",
 
   "nav.community-browse.header": "By Community",
 
@@ -3575,7 +3575,7 @@
 
   "nav.main.description": "Main navigation bar",
 
-  "nav.mydspace": "MyDSpace",
+  "nav.mydspace": "MyFDA",
 
   "nav.profile": "Profile",
 
@@ -3699,7 +3699,7 @@
 
   "quality-assurance.event.reject.description": "This operation can't be undone. Reject this suggestion?",
 
-  "quality-assurance.event.accept.description": "No DSpace project selected. A new project will be created based on the suggestion data.",
+  "quality-assurance.event.accept.description": "No project selected. A new project will be created based on the suggestion data.",
 
   "quality-assurance.event.action.cancel": "Cancel",
 
@@ -4271,9 +4271,9 @@
 
   "repository.image.logo": "Repository logo",
 
-  "repository.title": "DSpace Repository",
+  "repository.title": "Faculty Digital Archive",
 
-  "repository.title.prefix": "DSpace Repository :: ",
+  "repository.title.prefix": "Faculty Digital Archive - ",
 
   "resource-policies.add.button": "Add",
 
@@ -4695,7 +4695,7 @@
 
   "search.form.search_dspace": "All repository",
 
-  "search.form.scope.all": "All of DSpace",
+  "search.form.scope.all": "All repository",
 
   "search.results.head": "Search Results",
 
@@ -4859,7 +4859,7 @@
 
   "submission.import-external.page.hint": "Enter a query above to find items from the web to import in to DSpace.",
 
-  "submission.import-external.back-to-my-dspace": "Back to MyDSpace",
+  "submission.import-external.back-to-my-dspace": "Back to MyFDA",
 
   "submission.import-external.search.placeholder": "Search the external source",
 
@@ -5693,7 +5693,7 @@
 
   "thumbnail.person.placeholder": "No Profile Picture Available",
 
-  "title": "DSpace",
+  "title": "FDA title",
 
   "vocabulary-treeview.header": "Hierarchical tree view",
 
