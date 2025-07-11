@@ -11,12 +11,18 @@
     --ds-header-height: 90px;
   }
 
-  --ds-banner-text-background: #330662; // NYU Deep Violet
+  --ds-banner-text-background: #{$nyu-deep-violet};
   --ds-banner-background-gradient-width: 300px;
 
   --ds-header-navbar-border-bottom-height: 5px;
 
-  /* set the next two properties as `--ds-header-navbar-border-bottom-*`
+  --ds-header-bg:  #{$nyu-violet};
+
+  --ds-navbar-link-color: #{$white};
+  --ds-navbar-link-color-hover: #{$white};
+  --ds-header-icon-color: #{$white};
+  --ds-header-icon-color-hover: #{$white};
+    /* set the next two properties as `--ds-header-navbar-border-bottom-*`
   in order to keep the bottom border of the header when navbar is expanded */
 
   --ds-expandable-navbar-border-top-color: #{$white};

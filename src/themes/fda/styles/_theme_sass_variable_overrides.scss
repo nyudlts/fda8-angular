@@ -62,7 +62,8 @@ $theme-colors: (
   // ...
 );
 
-
+$nyu-violet:  #57068c;
+$nyu-deep-violet: #330662;
 /*** OTHER BOOTSTRAP VARIABLES ***/
 
 // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
@@ -70,7 +71,7 @@ $yiq-contrasted-threshold: 170;
 
 $body-color: #343a40;       // As Bootstrap $gray-800
 
-$link-color: #57068c;       // NYU Violet
+$link-color: $nyu-violet;       // NYU Violet
 $link-decoration: none;
 $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: underline;
@@ -81,10 +82,11 @@ $table-hover-bg: #ced4da;   // As Bootstrap $gray-400
 $navbar-dark-color: #fff;
 
 
+
 /*** CUSTOM DSPACE VARIABLES ***/
-
-$ds-home-news-link-color: #57068c;
-$ds-header-navbar-border-bottom-color: #57068c;
-
+$ds-home-news-link-color: $nyu-violet;
+$ds-header-navbar-border-bottom-color: $nyu-violet;
+$ds-navbar-dropdown-bg: $nyu-violet;
+$ds-navbar-dropdown-bg: $nyu-violet;
 $ds-breadcrumb-link-color: #154E66 !default;
 $ds-breadcrumb-link-active-color: #040D11 !default;
