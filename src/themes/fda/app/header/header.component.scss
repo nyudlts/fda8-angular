@@ -12,9 +12,12 @@
       min-height: var(--ds-header-height);
     }
   }
-
+ #header-left a {
+  max-width: 380px
+ }
   img#header-logo {
-    height: var(--ds-header-logo-height);
+    height: auto;
+    width: 100%
   }
 
   button#navbar-toggler {

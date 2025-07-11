@@ -4,7 +4,7 @@
   div.background-image-container {
     color: white;
     position: relative;
-    font-weight: 600;
+    font-weight: 400;
     a {
       color: white;
       text-decoration: underline;
@@ -24,7 +24,6 @@
 
     .container {
       position: relative;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 
       &:before, &:after {
         content: '';
@@ -65,7 +64,11 @@
   .jumbotron {
     background-color: transparent;
   }
-
+  @media (min-width: 576px) {
+      .jumbotron {
+          padding: 3rem 2rem;
+      }
+  }
   a {
     color: var(--ds-home-news-link-color);
 
@@ -77,6 +80,9 @@
   .lead {
     font-size: 1.25rem;
     font-weight: 400;
+  }
+  .brand {
+    max-width: 55rem;
   }
 }
 
