@@ -373,7 +373,7 @@ community:
   defaultBrowseTab: search
   # Search tab config
   searchSection:
-    showSidebar: true
+    showSidebar: false
 
 # Collection Page Config
 collection:
@@ -383,7 +383,7 @@ collection:
   defaultBrowseTab: search
   # Search tab config
   searchSection:
-    showSidebar: true
+    showSidebar: false
   edit:
     undoTimeout: 10000 # 10 seconds
 
