@@ -1,9 +1,11 @@
-// Add any global css for the theme here
+// Add any global css for the FDA theme here
 
 // imports the base global style
 @import '../../../styles/_global-styles.scss';
 
-.facet-filter, .setting-option, .advanced-search {
+.facet-filter,
+.setting-option,
+.advanced-search {
   background-color: var(--bs-light);
   border-radius: var(--bs-border-radius);
 
@@ -17,7 +19,8 @@
     background-color: var(--bs-primary);
   }
 
-  h4, .h4 {
+  h4,
+  .h4 {
     font-size: 1.1rem
   }
 }
@@ -26,6 +29,23 @@
   justify-content: space-around !important;
 }
 
- h1 {
+h1 {
   margin-top: 1rem;
+}
+
+.comcol-browse-label {
+  display: none;
+}
+
+.community-page,
+.collection-page {
+  .border-bottom {
+    border-bottom: none !important;
   }
+  .content-with-optional-title h2 {
+    font-size: 1.25rem;
+  }
+}
+.comcol-page-browse-section h3 {
+  margin-top: 3rem;
+}
