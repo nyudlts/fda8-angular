@@ -338,7 +338,7 @@ browseBy:
 
 communityList:
   # No. of communities to list per expansion (show more)
-  pageSize: 20
+  pageSize: 100
 
 homePage:
   recentSubmissions:
