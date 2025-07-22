@@ -95,7 +95,7 @@ export class CommunityPageSubCollectionListComponent implements OnInit, OnDestro
     if (hasValue(this.pageSize)) {
       this.config.pageSize = this.pageSize;
     } else {
-      this.config.pageSize = 10;
+      this.config.pageSize = 100;
     }
     this.config.currentPage = this.route.snapshot.queryParams[this.pageId + '.page'] ?? 1;
     this.sortConfig = new SortOptions('dc.title', SortDirection[this.route.snapshot.queryParams[this.pageId + '.sd']] ?? SortDirection.ASC);
