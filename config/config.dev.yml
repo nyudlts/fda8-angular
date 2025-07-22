@@ -374,6 +374,11 @@ community:
   # Search tab config
   searchSection:
     showSidebar: false
+  subcommunities:
+    pageSize: 100 # lmh - why doesn't this work?
+  collections:
+    pageSize: 100 # lmh - todo - why doesn't this work?
+  pageSize: 100 # lmh - todo - why doesn't this work?
 
 # Collection Page Config
 collection:
@@ -386,7 +391,11 @@ collection:
     showSidebar: false
   edit:
     undoTimeout: 10000 # 10 seconds
-
+  subcommunities:
+    pageSize: 100 # Or your desired number
+  collections:
+    pageSize: 100 # Or your desired number
+  pageSize: 100 # Or your desired number
 # Theme Config
 themes:
   # Add additional themes here. In the case where multiple themes match a route, the first one
