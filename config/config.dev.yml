@@ -370,7 +370,7 @@ community:
   # Default tab to be shown when browsing a Community. Valid values are: comcols, search, or browse_<field>
   # <field> must be any of the configured "browse by" fields, e.g., dateissued, author, title, or subject
   # When the default tab is not the 'search' tab, the search tab is moved to the last position
-  defaultBrowseTab: search
+  defaultBrowseTab: comcols
   # Search tab config
   searchSection:
     showSidebar: false
