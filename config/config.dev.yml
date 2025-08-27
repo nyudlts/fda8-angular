@@ -430,31 +430,18 @@ themes:
   #   handle: 10673/12
   #
   # # A theme with only a name will match every route
-  - name: fda
+
   #
   # # This theme will use the default bootstrap styling for DSpace components
   # - name: BASE_THEME_NAME
   #
-  - name: dspace
-    headTags:
-    - tagName: link
-      attributes:
-        rel: icon
-        href: assets/dspace/images/favicons/favicon.ico
-        sizes: any
-    - tagName: link
-      attributes:
-        rel: icon
-        href: assets/dspace/images/favicons/favicon.svg
-        type: image/svg+xml
-    - tagName: link
-      attributes:
-        rel: apple-touch-icon
-        href: assets/dspace/images/favicons/apple-touch-icon.png
-    - tagName: link
-      attributes:
-        rel: manifest
-        href: assets/dspace/images/favicons/manifest.webmanifest
+  - name: gallatin-syllabi
+    extends: fda
+    handle: 2451/69539
+
+  - name: fda
+
+
 
 # The default bundles that should always be displayed as suggestions when you upload a new bundle
 bundle:
