@@ -437,7 +437,7 @@ themes:
   #
   - name: gallatin-syllabi
     extends: fda
-    handle: 2451/69539
+    handle: 2451/34841
 
   - name: fda
 
