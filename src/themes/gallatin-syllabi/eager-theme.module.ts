@@ -5,6 +5,8 @@ import { RootModule } from '../../app/root.module';
 // Update the import path to the correct location of CollectionPageComponent
 import { CollectionPageComponent } from './app/collection-page/collection-page.component';
 
+import { ComcolPageBrowseByComponent } from './app/shared/comcol/comcol-page-browse-by/comcol-page-browse-by.component';
+
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
  * This will ensure that decorator gets picked up when the app loads
@@ -14,6 +16,7 @@ const ENTRY_COMPONENTS = [];
 const DECLARATIONS = [
   ...ENTRY_COMPONENTS,
   CollectionPageComponent,
+  ComcolPageBrowseByComponent
 ];
 
 @NgModule({
