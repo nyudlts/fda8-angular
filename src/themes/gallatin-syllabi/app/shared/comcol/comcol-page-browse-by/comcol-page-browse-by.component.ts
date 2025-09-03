@@ -61,8 +61,8 @@ export interface ComColPageNavOption {
  */
 @Component({
   selector: 'ds-base-comcol-page-browse-by',
-  styleUrls: ['./comcol-page-browse-by.component.scss'],
-  templateUrl: './comcol-page-browse-by.component.html',
+  styleUrls: ['../../../../../../app/shared/comcol/comcol-page-browse-by/comcol-page-browse-by.component.scss'],
+  templateUrl: '../../../../../../app/shared/comcol/comcol-page-browse-by/comcol-page-browse-by.component.html',
   imports: [
     FormsModule,
     NgForOf,
@@ -96,8 +96,6 @@ export class ComcolPageBrowseByComponent implements OnDestroy, OnInit {
   }
 
   ngOnInit(): void {
-    console.log("it is " + this.browseService.getBrowseDefinitions());
-console.log(this.browseService.getBrowseDefinitions());
     this.allOptions$ = this.browseService.getBrowseDefinitions().pipe(
       getFirstCompletedRemoteData(),
       map((browseDefListRD: RemoteData<PaginatedList<BrowseDefinition>>) => {
@@ -125,11 +123,35 @@ console.log(this.browseService.getBrowseDefinitions());
             });
           }
 
-          allOptions.push(...browseDefListRD.payload.page.map((config: BrowseDefinition) => ({
+          // Here we define the browse options available for Gallatin Syllabi collection
+          // And their order
+          allOptions.push({
+            id: 'browse_semester',
+            label: 'By Term',
+            routerLink: `${comColRoute}/browse/semester`,
+          });
+          allOptions.push({
+            id: 'browse_topic',
+            label: 'By Subject Area',
+            routerLink: `${comColRoute}/browse/topic`,
+          });
+          allOptions.push({
+            id: 'browse_subject',
+            label: 'By Keyword',
+            routerLink: `${comColRoute}/browse/subject`,
+          });
+          allOptions.push({
+            id: 'browse_author',
+            label: 'By Instructor',
+            routerLink: `${comColRoute}/browse/author`,
+          });
+
+       /*   allOptions.push(...browseDefListRD.payload.page.map((config: BrowseDefinition) => ({
             id: `browse_${config.id}`,
             label: `browse.comcol.by.${config.id}`,
             routerLink: `${comColRoute}/browse/${config.id}`,
-          })));
+          })));*/
+
 
           // When the default tab is not the "search" tab, the "search" tab is moved
           // at the end of the tabs ribbon for aesthetics purposes.
