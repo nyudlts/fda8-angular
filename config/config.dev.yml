@@ -474,7 +474,7 @@ markdown:
 vocabularies:
   - filter: 'subject'
     vocabulary: 'srsc'
-    enabled: true
+    enabled: false
 
 # Default collection/community sorting order at Advanced search, Create/update community and collection when there are not a query.
 comcolSelectionSort:
