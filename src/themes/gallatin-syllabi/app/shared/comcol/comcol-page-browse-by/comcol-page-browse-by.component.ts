@@ -61,8 +61,8 @@ export interface ComColPageNavOption {
  */
 @Component({
   selector: 'ds-base-comcol-page-browse-by',
-  styleUrls: ['../../../../../../app/shared/comcol/comcol-page-browse-by/comcol-page-browse-by.component.scss'],
-  templateUrl: '../../../../../../app/shared/comcol/comcol-page-browse-by/comcol-page-browse-by.component.html',
+  styleUrls: ['./comcol-page-browse-by.component.scss'],
+  templateUrl: './comcol-page-browse-by.component.html',
   imports: [
     FormsModule,
     NgForOf,
