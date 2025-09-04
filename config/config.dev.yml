@@ -458,7 +458,7 @@ mediaViewer:
 # If enabled, the user will be required to accept the agreement before they can use the repository.
 # And whether the privacy statement/COAR notify support page should exist or not.
 info:
-  enableEndUserAgreement: true
+  enableEndUserAgreement: false
   enablePrivacyStatement: true
   enableCOARNotifySupport: true
 
