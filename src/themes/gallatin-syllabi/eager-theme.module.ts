@@ -7,6 +7,9 @@ import { CollectionPageComponent } from './app/collection-page/collection-page.c
 
 import { ComcolPageBrowseByComponent } from './app/shared/comcol/comcol-page-browse-by/comcol-page-browse-by.component';
 
+import { SyllabusSearchResultListElementComponent } from './app/shared/object-list/search-result-list-element/item-search-result/item-types/syllabus/syllabus-search-result-list-element.component';
+
+
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
  * This will ensure that decorator gets picked up when the app loads
@@ -16,7 +19,8 @@ const ENTRY_COMPONENTS = [];
 const DECLARATIONS = [
   ...ENTRY_COMPONENTS,
   CollectionPageComponent,
-  ComcolPageBrowseByComponent
+  ComcolPageBrowseByComponent,
+  SyllabusSearchResultListElementComponent
 ];
 
 @NgModule({
