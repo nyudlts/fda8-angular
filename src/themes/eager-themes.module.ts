@@ -15,8 +15,7 @@ import { EagerThemeModule as GallatinSyllabiEagerThemeModule } from './gallatin-
 @NgModule({
   imports: [
     DSpaceEagerThemeModule,
-    // CustomEagerThemeModule,
     FDAEagerThemeModule,
-    GallatinSyllabiEagerThemeModule, ]
+    GallatinSyllabiEagerThemeModule ]
 })
 export class EagerThemesModule { }
