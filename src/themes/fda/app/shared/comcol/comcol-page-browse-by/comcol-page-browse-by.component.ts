@@ -126,14 +126,13 @@ export class ComcolPageBrowseByComponent implements OnDestroy, OnInit {
 
           }
 
-          // Here we define the browse options available for Communities and Collections
+          // FDA: Here we define the browse options available for Communities and Collections
           // And their order
           allOptions.push({
             id: 'browse_dateissued',
             label: 'browse.comcol.by.dateissued',
             routerLink: `${comColRoute}/browse/dateissued`,
           });
-
           allOptions.push({
             id: 'browse_author',
             label: 'browse.comcol.by.author',
