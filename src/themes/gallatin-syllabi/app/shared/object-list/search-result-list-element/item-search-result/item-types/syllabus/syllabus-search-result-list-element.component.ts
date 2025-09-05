@@ -43,11 +43,13 @@ export class SyllabusSearchResultListElementComponent extends SearchResultListEl
    * Route to the item's page
    */
   itemPageRoute: string;
-
+  //console.log('Themed SyllabusSearchResultListElementComponent.ngOnInit ' + Item.id);
   ngOnInit(): void {
-    console.log('SyllabusSearchResultListElementComponent.ngOnInit ' + this.dso?.id);
+    //console.log('Themed SyllabusSearchResultListElementComponent.ngOnInit ' + this.dso?.id);
     super.ngOnInit();
     this.showThumbnails = false;
     this.itemPageRoute = getItemPageRoute(this.dso);
+    console.log('Themed SyllabusSearchResultListElementComponent.ngOnInit itemPageRoute' + this.itemPageRoute);
+
   }
 }
