@@ -45,6 +45,7 @@ export class SyllabusSearchResultListElementComponent extends SearchResultListEl
   itemPageRoute: string;
 
   ngOnInit(): void {
+    console.log('SyllabusSearchResultListElementComponent.ngOnInit ' + this.dso?.id);
     super.ngOnInit();
     this.showThumbnails = false;
     this.itemPageRoute = getItemPageRoute(this.dso);
