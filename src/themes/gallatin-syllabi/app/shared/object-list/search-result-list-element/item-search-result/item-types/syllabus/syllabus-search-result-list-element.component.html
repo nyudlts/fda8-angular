@@ -1,0 +1,33 @@
+<div class="row header fda-syllabus-header" role="presentation">
+        <div class="col-md-2">Term</div>
+        <div class="col-md-2">Course Number</div>
+        <div class="col-md-6">Title</div>
+        <div class="col-md-2">Instructor</div>
+</div>
+<div class="row">
+  <!-- Term -->
+  <div class="col-md-2">
+    <span *ngFor="let nyuterm of allMetadataValues('dc.description.semester')">
+      <span [innerHTML]="nyuterm"></span>
+    </span>
+  </div>
+
+  <!-- Course Number -->
+  <div class="col-md-2">
+    <span *ngFor="let nyucoursenumber of allMetadataValues('dc.identifier.coursenumber')">
+      <span [innerHTML]="nyucoursenumber"></span>
+    </span>
+  </div>
+
+  <!-- Title -->
+  <div class="col-md-6">
+    <a *ngIf="linkType !== linkTypes.None" [target]="(linkType === linkTypes.ExternalLink) ? '_blank' : '_self'" [attr.rel]="(linkType === linkTypes.ExternalLink) ? 'noopener noreferrer' : null" [routerLink]="[itemPageRoute]" class="item-list-title dont-break-out" [innerHTML]="dsoTitle" role="link" tabindex="0"></a>
+  </div>
+
+  <!-- instructor -->
+  <div class="col-md-2">
+    <span *ngFor="let instructor of allMetadataValues('dc.contributor.author')">
+      <span [innerHTML]="instructor"></span>
+    </span>
+  </div>
+</div>

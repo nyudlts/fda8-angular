@@ -430,31 +430,24 @@ themes:
   #   handle: 10673/12
   #
   # # A theme with only a name will match every route
-  - name: fda
+
   #
   # # This theme will use the default bootstrap styling for DSpace components
   # - name: BASE_THEME_NAME
   #
-  - name: dspace
+  - name: gallatin-syllabi
+    extends: fda
+    handle: 2451/34841
+
+  - name: fda
     headTags:
-    - tagName: link
-      attributes:
-        rel: icon
-        href: assets/dspace/images/favicons/favicon.ico
-        sizes: any
-    - tagName: link
-      attributes:
-        rel: icon
-        href: assets/dspace/images/favicons/favicon.svg
-        type: image/svg+xml
-    - tagName: link
-      attributes:
-        rel: apple-touch-icon
-        href: assets/dspace/images/favicons/apple-touch-icon.png
-    - tagName: link
-      attributes:
-        rel: manifest
-        href: assets/dspace/images/favicons/manifest.webmanifest
+      - tagName: link
+        attributes:
+          rel: icon
+          href: https://cdn.library.nyu.edu/images/favicon.ico # Path to your favicon file
+          sizes: any
+
+
 
 # The default bundles that should always be displayed as suggestions when you upload a new bundle
 bundle:
@@ -471,7 +464,7 @@ mediaViewer:
 # If enabled, the user will be required to accept the agreement before they can use the repository.
 # And whether the privacy statement/COAR notify support page should exist or not.
 info:
-  enableEndUserAgreement: true
+  enableEndUserAgreement: false
   enablePrivacyStatement: true
   enableCOARNotifySupport: true
 
@@ -487,7 +480,7 @@ markdown:
 vocabularies:
   - filter: 'subject'
     vocabulary: 'srsc'
-    enabled: true
+    enabled: false
 
 # Default collection/community sorting order at Advanced search, Create/update community and collection when there are not a query.
 comcolSelectionSort:
@@ -519,54 +512,53 @@ search:
 # Configuration for Notify Admin Dashboard for metrics visualization
 notifyMetrics:
   # Configuration for received messages
-- title: 'admin-notify-dashboard.received-ldn'
-  boxes:
-  - color: '#B8DAFF'
-    title: 'admin-notify-dashboard.NOTIFY.incoming.accepted'
-    config: 'NOTIFY.incoming.accepted'
-    description: 'admin-notify-dashboard.NOTIFY.incoming.accepted.description'
-  - color: '#D4EDDA'
-    title: 'admin-notify-dashboard.NOTIFY.incoming.processed'
-    config: 'NOTIFY.incoming.processed'
-    description: 'admin-notify-dashboard.NOTIFY.incoming.processed.description'
-  - color: '#FDBBC7'
-    title: 'admin-notify-dashboard.NOTIFY.incoming.failure'
-    config: 'NOTIFY.incoming.failure'
-    description: 'admin-notify-dashboard.NOTIFY.incoming.failure.description'
-  - color: '#FDBBC7'
-    title: 'admin-notify-dashboard.NOTIFY.incoming.untrusted'
-    config: 'NOTIFY.incoming.untrusted'
-    description: 'admin-notify-dashboard.NOTIFY.incoming.untrusted.description'
-  - color: '#43515F'
-    title: 'admin-notify-dashboard.NOTIFY.incoming.involvedItems'
-    textColor: '#fff'
-    config: 'NOTIFY.incoming.involvedItems'
-    description: 'admin-notify-dashboard.NOTIFY.incoming.involvedItems.description'
-# Configuration for outgoing messages
-- title: 'admin-notify-dashboard.generated-ldn'
-  boxes:
-  - color: '#B8DAFF'
-    title: 'admin-notify-dashboard.NOTIFY.outgoing.queued'
-    config: 'NOTIFY.outgoing.queued'
-    description: 'admin-notify-dashboard.NOTIFY.outgoing.queued.description'
-  - color: '#FDEEBB'
-    title: 'admin-notify-dashboard.NOTIFY.outgoing.queued_for_retry'
-    config: 'NOTIFY.outgoing.queued_for_retry'
-    description: 'admin-notify-dashboard.NOTIFY.outgoing.queued_for_retry.description'
-  - color: '#FDBBC7'
-    title: 'admin-notify-dashboard.NOTIFY.outgoing.failure'
-    config: 'NOTIFY.outgoing.failure'
-    description: 'admin-notify-dashboard.NOTIFY.outgoing.failure.description'
-  - color: '#43515F'
-    title: 'admin-notify-dashboard.NOTIFY.outgoing.involvedItems'
-    textColor: '#fff'
-    config: 'NOTIFY.outgoing.involvedItems'
-    description: 'admin-notify-dashboard.NOTIFY.outgoing.involvedItems.description'
-  - color: '#D4EDDA'
-    title: 'admin-notify-dashboard.NOTIFY.outgoing.delivered'
-    config: 'NOTIFY.outgoing.delivered'
-    description: 'admin-notify-dashboard.NOTIFY.outgoing.delivered.description'
-
+  - title: 'admin-notify-dashboard.received-ldn'
+    boxes:
+      - color: '#B8DAFF'
+        title: 'admin-notify-dashboard.NOTIFY.incoming.accepted'
+        config: 'NOTIFY.incoming.accepted'
+        description: 'admin-notify-dashboard.NOTIFY.incoming.accepted.description'
+      - color: '#D4EDDA'
+        title: 'admin-notify-dashboard.NOTIFY.incoming.processed'
+        config: 'NOTIFY.incoming.processed'
+        description: 'admin-notify-dashboard.NOTIFY.incoming.processed.description'
+      - color: '#FDBBC7'
+        title: 'admin-notify-dashboard.NOTIFY.incoming.failure'
+        config: 'NOTIFY.incoming.failure'
+        description: 'admin-notify-dashboard.NOTIFY.incoming.failure.description'
+      - color: '#FDBBC7'
+        title: 'admin-notify-dashboard.NOTIFY.incoming.untrusted'
+        config: 'NOTIFY.incoming.untrusted'
+        description: 'admin-notify-dashboard.NOTIFY.incoming.untrusted.description'
+      - color: '#43515F'
+        title: 'admin-notify-dashboard.NOTIFY.incoming.involvedItems'
+        textColor: '#fff'
+        config: 'NOTIFY.incoming.involvedItems'
+        description: 'admin-notify-dashboard.NOTIFY.incoming.involvedItems.description'
+  # Configuration for outgoing messages
+  - title: 'admin-notify-dashboard.generated-ldn'
+    boxes:
+      - color: '#B8DAFF'
+        title: 'admin-notify-dashboard.NOTIFY.outgoing.queued'
+        config: 'NOTIFY.outgoing.queued'
+        description: 'admin-notify-dashboard.NOTIFY.outgoing.queued.description'
+      - color: '#FDEEBB'
+        title: 'admin-notify-dashboard.NOTIFY.outgoing.queued_for_retry'
+        config: 'NOTIFY.outgoing.queued_for_retry'
+        description: 'admin-notify-dashboard.NOTIFY.outgoing.queued_for_retry.description'
+      - color: '#FDBBC7'
+        title: 'admin-notify-dashboard.NOTIFY.outgoing.failure'
+        config: 'NOTIFY.outgoing.failure'
+        description: 'admin-notify-dashboard.NOTIFY.outgoing.failure.description'
+      - color: '#43515F'
+        title: 'admin-notify-dashboard.NOTIFY.outgoing.involvedItems'
+        textColor: '#fff'
+        config: 'NOTIFY.outgoing.involvedItems'
+        description: 'admin-notify-dashboard.NOTIFY.outgoing.involvedItems.description'
+      - color: '#D4EDDA'
+        title: 'admin-notify-dashboard.NOTIFY.outgoing.delivered'
+        config: 'NOTIFY.outgoing.delivered'
+        description: 'admin-notify-dashboard.NOTIFY.outgoing.delivered.description'
 
 # Live Region configuration
 # Live Region as defined by w3c, https://www.w3.org/TR/wai-aria-1.1/#terms:
