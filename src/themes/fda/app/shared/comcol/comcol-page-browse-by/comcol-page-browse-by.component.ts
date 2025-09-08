@@ -96,8 +96,6 @@ export class ComcolPageBrowseByComponent implements OnDestroy, OnInit {
   }
 
   ngOnInit(): void {
-    console.log("it is " + this.id);
-    console.log(this.browseService.getBrowseDefinitions());
     this.allOptions$ = this.browseService.getBrowseDefinitions().pipe(
       getFirstCompletedRemoteData(),
       map((browseDefListRD: RemoteData<PaginatedList<BrowseDefinition>>) => {
