@@ -43,10 +43,24 @@ h1 {
   .border-bottom {
     border-bottom: none !important;
   }
+
   .content-with-optional-title h2 {
     font-size: 1.25rem;
   }
 }
+
 .comcol-page-browse-section h3 {
   margin-top: 3rem;
+}
+
+.fda-syllabus-header {
+  display: none;
+}
+
+li:first-of-type .fda-syllabus-header {
+  display: flex;
+  padding-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-size: .9rem;
+  font-weight: bold;
 }
