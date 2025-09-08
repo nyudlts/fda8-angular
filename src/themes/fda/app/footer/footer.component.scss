@@ -1,0 +1,14 @@
+:host {
+  footer {
+    ul {
+      li {
+        &:not(:last-child) {
+          &:after {
+            content: '';
+            border-right: 1px rgba(255, 255, 255, 0.767) solid !important;
+          }
+        }
+      }
+    }
+  }
+}
