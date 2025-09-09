@@ -5,12 +5,14 @@
     color: white;
     position: relative;
     font-weight: 400;
+    background-color: var(--ds-banner-text-background);
+
     a {
       color: white;
       text-decoration: underline;
     }
 
-    .background-image > img {
+    .background-image>img {
       background-color: var(--bs-info);
       position: absolute;
       z-index: -1;
@@ -25,7 +27,8 @@
     .container {
       position: relative;
 
-      &:before, &:after {
+      &:before,
+      &:after {
         content: '';
         display: block;
         width: var(--ds-banner-background-gradient-width);
@@ -64,11 +67,13 @@
   .jumbotron {
     background-color: transparent;
   }
+
   @media (min-width: 576px) {
-      .jumbotron {
-          padding: 3rem 2rem 3rem 0;
-      }
+    .jumbotron {
+      padding: 3rem 2rem 3rem 0;
+    }
   }
+
   a {
     color: var(--ds-home-news-link-color);
 
@@ -81,9 +86,8 @@
     font-size: 1.25rem;
     font-weight: 400;
   }
+
   .brand {
     max-width: 55rem;
   }
 }
-
-
