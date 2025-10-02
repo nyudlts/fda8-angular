@@ -130,6 +130,11 @@ export class ComcolPageBrowseByComponent implements OnDestroy, OnInit {
             label: 'By Term',
             routerLink: `${comColRoute}/browse/semester`,
           });
+        allOptions.push({
+            id: 'browse_dateissued',
+            label: 'browse.comcol.by.dateissued',
+            routerLink: `${comColRoute}/browse/dateissued`,
+          });
           allOptions.push({
             id: 'browse_topic',
             label: 'By Subject Area',
