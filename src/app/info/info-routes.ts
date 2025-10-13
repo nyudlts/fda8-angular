@@ -11,7 +11,6 @@ import { hasValue } from '../shared/empty.util';
 import { AccessibilitySettingsComponent } from './accessibility-settings/accessibility-settings.component';
 import { ThemedEndUserAgreementComponent } from './end-user-agreement/themed-end-user-agreement.component';
 import { ThemedFeedbackComponent } from './feedback/themed-feedback.component';
-import { AboutComponent } from './about/about.component';
 import {
   ACCESSIBILITY_SETTINGS_PATH,
   COAR_NOTIFY_SUPPORT,
@@ -22,7 +21,7 @@ import {
 } from './info-routing-paths';
 import { NotifyInfoComponent } from './notify-info/notify-info.component';
 import { ThemedPrivacyComponent } from './privacy/themed-privacy.component';
-
+import { AboutComponent } from './about/about.component';
 
 export const ROUTES: Routes = [
   {
