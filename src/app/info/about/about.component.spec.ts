@@ -8,15 +8,15 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { ActivatedRouteStub } from '../../shared/testing/active-router.stub';
-import { PrivacyComponent } from './about.component';
+import { AboutComponent } from './about.component';
 
 describe('PrivacyComponent', () => {
-  let component: PrivacyComponent;
-  let fixture: ComponentFixture<PrivacyComponent>;
+  let component: AboutComponent;
+  let fixture: ComponentFixture<AboutComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [TranslateModule.forRoot(), PrivacyComponent],
+      imports: [TranslateModule.forRoot(), AboutComponent],
       providers: [
         { provide: ActivatedRoute, useValue: new ActivatedRouteStub() },
       ],
@@ -25,7 +25,7 @@ describe('PrivacyComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PrivacyComponent);
+    fixture = TestBed.createComponent(AboutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
