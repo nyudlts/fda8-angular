@@ -29,11 +29,7 @@ const DECLARATIONS = [
   NavbarComponent,
   TopLevelCommunityListComponent,
   CommunityPageSubCollectionListComponent,
-<<<<<<< HEAD
   UntypedItemComponent,
-=======
-  ComcolPageBrowseByComponent,
->>>>>>> 05d6ac114 (Footer: customize)
   FooterComponent,
 ];
 
