@@ -1,0 +1,12 @@
+{
+"item.page.contributor.*": "Authors", 
+"item.page.contributor.author": "Authors",
+"item.page.contributor.translator": "Translator",
+"item.page.doi": "DOI",
+"item.page.subject": "Subject Keywords",
+"item.page.title": "Title",
+"item.page.rights": "Rights",
+"item.page.issue": "Issue",  
+"item.page.journal": "Journal Title",
+"item.page.volume": "Volume"
+}
