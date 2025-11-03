@@ -19,7 +19,6 @@ const DECLARATIONS = [
 @NgModule({
   imports: [
     CommonModule,
-
     ...DECLARATIONS,
   ],
   providers: [
