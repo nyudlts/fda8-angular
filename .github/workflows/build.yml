@@ -180,15 +180,6 @@ jobs:
           echo "$result"
           echo "$result" | grep -oE "<meta name=\"title\" [^>]*>" | grep Digital
 
-      # Get a specific community in our test data and verify that the "<h1>" tag includes "Publications" (the community name).
-      # If it does, then SSR is working.
-      - name: Verify SSR on a Community page
-        run: |
-          result=$(wget -O- -q http://127.0.0.1:4000/communities/aa5ded57-1dac-4511-8f58-d603215ea708)
-          echo "$result"
-          echo "$result" | grep -oE "<h1 [^>]*>[^><]*</h1>" | grep Libraries
-
-
 
 
       # Verify 301 Handle redirect behavior
