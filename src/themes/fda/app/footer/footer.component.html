@@ -3,10 +3,16 @@
     <div class="content-container">
       <ul class="footer-info list-unstyled d-flex justify-content-center mb-0">
         <li>
-          <a routerLink="info/about" tabindex="0">About the Archive</a>
+          <a routerLink="info/about" tabindex="0">About the FDA</a>
         </li>
         <li>
-          <a href="https://www.nyu.edu/footer/accessibility.html">{{ 'footer.link.accessibility' | translate }} <span class="glyphicon glyphicon-new-window"></span></a>
+          <a href="https://support.nyu.edu/esc?id=kb_article&sysparm_article=KB0012311">Get Started &nbsp;<i class="fa fa-external-link fa-xs" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="https://www.nyu.edu/footer/accessibility.html">{{ 'footer.link.accessibility' | translate }} &nbsp;<i class="fa fa-external-link fa-xs" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a routerLink="info/about" fragment="rights">Rights</a>
         </li>
         <li *ngIf="showPrivacyPolicy">
           <a routerLink="info/privacy">{{ 'footer.link.privacy-policy' | translate}}</a>
@@ -16,12 +22,6 @@
         </li>
         <li *ngIf="showSendFeedback$ | async">
           <a routerLink="info/feedback">{{ 'footer.link.feedback' | translate}}</a>
-        </li>
-        <li>
-          <a href="https://support.nyu.edu/esc?id=kb_article&sysparm_article=KB0012311">Get Started</a>
-        </li>
-        <li>
-          <a routerLink="info/about" fragment="rights">Rights</a>
         </li>
       </ul>
     </div>
