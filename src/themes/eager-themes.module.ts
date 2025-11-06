@@ -16,6 +16,6 @@ import { EagerThemeModule as GallatinSyllabiEagerThemeModule } from './gallatin-
   imports: [
     DSpaceEagerThemeModule,
     FDAEagerThemeModule,
-    GallatinSyllabiEagerThemeModule ]
+    GallatinSyllabiEagerThemeModule ],
 })
 export class EagerThemesModule { }

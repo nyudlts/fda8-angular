@@ -4,10 +4,9 @@ import { NgModule } from '@angular/core';
 import { RootModule } from '../../app/root.module';
 // Update the import path to the correct location of CollectionPageComponent
 import { CollectionPageComponent } from './app/collection-page/collection-page.component';
-
 import { ComcolPageBrowseByComponent } from './app/shared/comcol/comcol-page-browse-by/comcol-page-browse-by.component';
+import { ItemSearchResultListElementComponent } from './app/shared/object-list/search-result-list-element/item-search-result/item-types/item/item-search-result-list-element.component';
 
-import { SyllabusSearchResultListElementComponent } from './app/shared/object-list/search-result-list-element/item-search-result/item-types/syllabus/syllabus-search-result-list-element.component';
 
 
 /**
@@ -20,7 +19,7 @@ const DECLARATIONS = [
   ...ENTRY_COMPONENTS,
   CollectionPageComponent,
   ComcolPageBrowseByComponent,
-  SyllabusSearchResultListElementComponent
+  ItemSearchResultListElementComponent,
 ];
 
 @NgModule({

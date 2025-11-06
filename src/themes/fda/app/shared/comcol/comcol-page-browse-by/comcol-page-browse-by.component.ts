@@ -34,10 +34,6 @@ import {
   take,
 } from 'rxjs/operators';
 
-import {
-  APP_CONFIG,
-  AppConfig,
-} from '../../../../../../config/app-config.interface';
 import { getCollectionPageRoute } from '../../../../../../app/collection-page/collection-page-routing-paths';
 import { getCommunityPageRoute } from '../../../../../../app/community-page/community-page-routing-paths';
 import { BrowseService } from '../../../../../../app/core/browse/browse.service';
@@ -46,6 +42,10 @@ import { RemoteData } from '../../../../../../app/core/data/remote-data';
 import { BrowseDefinition } from '../../../../../../app/core/shared/browse-definition.model';
 import { getFirstCompletedRemoteData } from '../../../../../../app/core/shared/operators';
 import { isNotEmpty } from '../../../../../../app/shared/empty.util';
+import {
+  APP_CONFIG,
+  AppConfig,
+} from '../../../../../../config/app-config.interface';
 /* import { Collection } from '../../../../../../app/core/shared/collection.model'; */
 
 export interface ComColPageNavOption {
@@ -60,7 +60,7 @@ export interface ComColPageNavOption {
  * It expects the ID of the Community or Collection as input to be passed on as a scope
  */
 @Component({
-  selector: 'ds-base-comcol-page-browse-by',
+  selector: 'ds-themed-base-comcol-page-browse-by',
   styleUrls: ['../../../../../../app/shared/comcol/comcol-page-browse-by/comcol-page-browse-by.component.scss'],
   templateUrl: '../../../../../../app/shared/comcol/comcol-page-browse-by/comcol-page-browse-by.component.html',
   imports: [

@@ -36,7 +36,7 @@ import { PaginationComponentOptions } from '../../../../../../../app/shared/pagi
 import { VarDirective } from '../../../../../../../app/shared/utils/var.directive';
 
 @Component({
-  selector: 'ds-base-community-page-sub-collection-list',
+  selector: 'ds-themed-base-community-page-sub-collection-list',
   styleUrls: ['./community-page-sub-collection-list.component.scss'],
   templateUrl: './community-page-sub-collection-list.component.html',
   animations: [fadeIn],

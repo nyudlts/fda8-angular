@@ -8,10 +8,12 @@ import { i18nBreadcrumbResolver } from '../core/breadcrumbs/i18n-breadcrumb.reso
 import { notifyInfoGuard } from '../core/coar-notify/notify-info/notify-info.guard';
 import { feedbackGuard } from '../core/feedback/feedback.guard';
 import { hasValue } from '../shared/empty.util';
+import { AboutComponent } from './about/about.component';
 import { AccessibilitySettingsComponent } from './accessibility-settings/accessibility-settings.component';
 import { ThemedEndUserAgreementComponent } from './end-user-agreement/themed-end-user-agreement.component';
 import { ThemedFeedbackComponent } from './feedback/themed-feedback.component';
 import {
+  ABOUT_PATH,
   ACCESSIBILITY_SETTINGS_PATH,
   COAR_NOTIFY_SUPPORT,
   END_USER_AGREEMENT_PATH,
@@ -20,7 +22,6 @@ import {
 } from './info-routing-paths';
 import { NotifyInfoComponent } from './notify-info/notify-info.component';
 import { ThemedPrivacyComponent } from './privacy/themed-privacy.component';
-
 
 export const ROUTES: Routes = [
   {
@@ -35,6 +36,12 @@ export const ROUTES: Routes = [
     component: AccessibilitySettingsComponent,
     resolve: { breadcrumb: i18nBreadcrumbResolver },
     data: { title: 'info.accessibility-settings.title', breadcrumbKey: 'info.accessibility-settings' },
+  },
+  {
+    path: ABOUT_PATH,
+    component: AboutComponent,
+    resolve: { breadcrumb: i18nBreadcrumbResolver },
+    data: { title: 'info.about.title', breadcrumbKey: 'info.about' },
   },
   environment.info.enableEndUserAgreement ? {
     path: END_USER_AGREEMENT_PATH,

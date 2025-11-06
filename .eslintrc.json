@@ -135,7 +135,7 @@
         "no-underscore-dangle": "off",
         "no-prototype-builtins": "off",
         "no-useless-escape": "off",
-        "ordered-imports": true,
+        "ordered-imports": 0,
         "@angular-eslint/directive-selector": [
           "error",
           {

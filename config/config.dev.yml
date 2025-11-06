@@ -465,7 +465,7 @@ mediaViewer:
 # And whether the privacy statement/COAR notify support page should exist or not.
 info:
   enableEndUserAgreement: false
-  enablePrivacyStatement: true
+  enablePrivacyStatement: false
   enableCOARNotifySupport: true
 
 # Whether to enable Markdown (https://commonmark.org/) and MathJax (https://www.mathjax.org/)

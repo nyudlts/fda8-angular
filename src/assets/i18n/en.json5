@@ -1915,7 +1915,7 @@
 
   "footer.copyright": "copyright © 2002-{{ year }}",
 
-  "footer.link.accessibility": "Accessibility settings",
+  "footer.link.accessibility": "Accessibility",
 
   "footer.link.dspace": "DSpace software",
 
@@ -2206,6 +2206,12 @@
   "info.privacy.head": "Privacy Statement",
 
   "info.privacy.title": "Privacy Statement",
+
+  "info.about.breadcrumbs": "About this site",
+
+  "info.about.head": "NYU Faculty Digital Archive Guidelines",
+
+  "info.about.title": "NYU Faculty Digital Archive Guidelines",
 
   "info.feedback.breadcrumbs": "Feedback",
 
