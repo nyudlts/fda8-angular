@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-
 import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
 
 
@@ -20,7 +19,7 @@ const DECLARATIONS = [
 @NgModule({
   imports: [
     CommonModule,
-    
+
     ...DECLARATIONS,
   ],
   providers: [
