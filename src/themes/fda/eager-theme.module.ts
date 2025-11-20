@@ -10,8 +10,6 @@ import { HomeNewsComponent } from './app/home-page/home-news/home-news.component
 import { TopLevelCommunityListComponent } from './app/home-page/top-level-community-list/top-level-community-list.component';
 import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
 import { NavbarComponent } from './app/navbar/navbar.component';
-import { FooterComponent } from './app/footer/footer.component';
-import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
 
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
