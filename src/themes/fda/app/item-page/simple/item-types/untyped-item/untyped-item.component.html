@@ -66,10 +66,7 @@
       <tr *ngIf="object.firstMetadataValue('dc.date.issued')">
         <td class="metadataFieldLabel">{{'item.page.date.issued' | translate}}:&nbsp;</td>
         <td class="metadataFieldValue">
-          <ds-generic-item-page-field
-            [item]="object"
-            [fields]="['dc.date.issued']">
-          </ds-generic-item-page-field>
+           {{object.allMetadataValues('dc.date.issued')}}
         </td>
       </tr>
 
@@ -218,6 +215,9 @@
 
       <!-- Appears in Collections -->
       <tr>
+        <td class="metadataFieldLabel">
+          {{'item.page.collectionslabel' | translate}}:
+        </td>
         <td class="metadataFieldValue">
           <ds-item-page-collections [item]="object" ></ds-item-page-collections>
         </td>
