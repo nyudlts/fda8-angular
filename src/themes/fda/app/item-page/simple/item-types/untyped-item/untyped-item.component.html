@@ -1,0 +1,250 @@
+<!--
+  Default Item Page Template - DSpace 5 Style
+-->
+
+<div class="item-page-content default-collection">
+
+  <ds-results-back-button *ngIf="showBackButton$ | async" [back]="back"></ds-results-back-button>
+
+  <div class="row" *ngIf="iiifEnabled">
+    <div class="col-12">
+      <ds-mirador-viewer id="iiif-viewer"
+                         [object]="object"
+                         [searchable]="iiifSearchEnabled"
+                         [query]="iiifQuery$ | async">
+      </ds-mirador-viewer>
+    </div>
+  </div>
+
+  <!-- Item Display Section -->
+  <section class="fda-individual-item">
+
+    <table class="table itemDisplayTable">
+      <tbody>
+      <!-- Title -->
+      <tr class="item-title">
+        <td class="metadataFieldLabel">{{'item.page.title' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <h1 class="page-title">
+            <ds-item-page-title-field [item]="object"></ds-item-page-title-field>
+          </h1>
+        </td>
+      </tr>
+
+      <!-- Alternative Title -->
+      <tr *ngIf="object.firstMetadataValue('dc.title.alternative')">
+        <td class="metadataFieldLabel">{{'item.page.title.alternative' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <ds-generic-item-page-field
+            [item]="object"
+            [fields]="['dc.title.alternative']">
+          </ds-generic-item-page-field>
+        </td>
+      </tr>
+
+      <!-- Authors/Contributors -->
+      <tr>
+        <td class="metadataFieldLabel">{{'item.page.contributor.*' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <ds-metadata-representation-list
+            [parentItem]="object"
+            [itemType]="'Person'"
+            [metadataFields]="['dc.contributor.author', 'dc.contributor', 'dc.creator']">
+          </ds-metadata-representation-list>
+        </td>
+      </tr>
+
+      <!-- Subject Keywords -->
+      <tr *ngIf="object.allMetadataValues('dc.subject').length > 0">
+        <td class="metadataFieldLabel">{{'item.page.subject' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          {{object.allMetadataValues('dc.subject').join('; ')}}
+        </td>
+      </tr>
+
+      <!-- Date Issued -->
+      <tr *ngIf="object.firstMetadataValue('dc.date.issued')">
+        <td class="metadataFieldLabel">{{'item.page.date.issued' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+           {{object.allMetadataValues('dc.date.issued')}}
+        </td>
+      </tr>
+
+      <!-- Publisher -->
+      <tr *ngIf="object.firstMetadataValue('dc.publisher')">
+        <td class="metadataFieldLabel">{{'item.page.publisher' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <ds-generic-item-page-field
+            [item]="object"
+            [fields]="['dc.publisher']">
+          </ds-generic-item-page-field>
+        </td>
+      </tr>
+
+      <!-- Citation -->
+      <tr *ngIf="object.firstMetadataValue('dc.identifier.citation')">
+        <td class="metadataFieldLabel">{{'item.page.citation' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <ds-item-page-uri-field
+            [item]="object"
+            [fields]="['dc.identifier.citation']">
+          </ds-item-page-uri-field>
+        </td>
+      </tr>
+
+      <!-- Series/Report -->
+      <tr *ngIf="object.firstMetadataValue('dc.relation.ispartofseries')">
+        <td class="metadataFieldLabel">{{'item.page.relation.ispartofseries' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <ds-generic-item-page-field
+            [item]="object"
+            [fields]="['dc.relation.ispartofseries']">
+          </ds-generic-item-page-field>
+        </td>
+      </tr>
+
+      <!-- Abstract -->
+      <tr *ngIf="object.firstMetadataValue('dc.description.abstract')">
+        <td class="metadataFieldLabel">{{'item.page.abstract' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <ds-generic-item-page-field
+            [item]="object"
+            [fields]="['dc.description.abstract']">
+          </ds-generic-item-page-field>
+        </td>
+      </tr>
+
+      <!-- Description -->
+      <tr *ngIf="object.firstMetadataValue('dc.description')">
+        <td class="metadataFieldLabel">{{'item.page.description' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <ds-generic-item-page-field
+            [item]="object"
+            [fields]="['dc.description']">
+          </ds-generic-item-page-field>
+        </td>
+      </tr>
+
+      <!-- Gov't Doc # -->
+      <tr *ngIf="object.firstMetadataValue('dc.identifier.govdoc')">
+        <td class="metadataFieldLabel">{{'item.page.identifier.govdoc' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <ds-generic-item-page-field
+            [item]="object"
+            [fields]="['dc.identifier.govdoc']">
+          </ds-generic-item-page-field>
+        </td>
+      </tr>
+
+      <!-- URI -->
+      <tr *ngIf="object.firstMetadataValue('dc.identifier.uri')">
+        <td class="metadataFieldLabel">{{'item.page.uri' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <ds-item-page-uri-field
+            [item]="object"
+            [fields]="['dc.identifier.uri']">
+          </ds-item-page-uri-field>
+        </td>
+      </tr>
+
+      <!-- ISBN -->
+      <tr *ngIf="object.firstMetadataValue('dc.identifier.isbn')">
+        <td class="metadataFieldLabel">{{'item.page.isbn' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <ds-generic-item-page-field
+            [item]="object"
+            [fields]="['dc.identifier.isbn']">
+          </ds-generic-item-page-field>
+        </td>
+      </tr>
+
+      <!-- ISSN -->
+      <tr *ngIf="object.firstMetadataValue('dc.identifier.issn')">
+        <td class="metadataFieldLabel">{{'item.page.issn' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <ds-generic-item-page-field
+            [item]="object"
+            [fields]="['dc.identifier.issn']">
+          </ds-generic-item-page-field>
+        </td>
+      </tr>
+
+      <!-- DOI -->
+      <tr *ngIf="object.firstMetadataValue('dc.identifier.DOI')">
+        <td class="metadataFieldLabel">{{'item.page.doi' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <ds-item-page-uri-field
+            [item]="object"
+            [fields]="['dc.identifier.DOI']">
+          </ds-item-page-uri-field>
+        </td>
+      </tr>
+
+      <!-- ISMN -->
+      <tr *ngIf="object.firstMetadataValue('dc.identifier.ismn')">
+        <td class="metadataFieldLabel">{{'item.page.ismn' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <ds-generic-item-page-field
+            [item]="object"
+            [fields]="['dc.identifier.ismn']">
+          </ds-generic-item-page-field>
+        </td>
+      </tr>
+
+      <!-- Other Identifiers -->
+      <tr *ngIf="object.firstMetadataValue('dc.identifier')">
+        <td class="metadataFieldLabel">{{'item.page.identifier' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <ds-generic-item-page-field
+            [item]="object"
+            [fields]="['dc.identifier']">
+          </ds-generic-item-page-field>
+        </td>
+      </tr>
+
+      <!-- Rights -->
+      <tr *ngIf="object.firstMetadataValue('dc.rights')">
+        <td class="metadataFieldLabel">{{'item.page.rights' | translate}}:&nbsp;</td>
+        <td class="metadataFieldValue">
+          <ds-generic-item-page-field
+            [item]="object"
+            [fields]="['dc.rights']">
+          </ds-generic-item-page-field>
+        </td>
+      </tr>
+
+      <!-- Appears in Collections -->
+      <tr>
+        <td class="metadataFieldLabel">
+          {{'item.page.collectionslabel' | translate}}:
+        </td>
+        <td class="metadataFieldValue">
+          <ds-item-page-collections [item]="object" ></ds-item-page-collections>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <br/>
+
+    <!-- Files Panel -->
+    <div class="panel panel-info">
+      <div class="panel-body">
+        <ds-item-page-file-section [item]="object"></ds-item-page-file-section>
+      </div>
+    </div>
+
+    <!-- Show Full Item Record Button -->
+    <div class="container row">
+      <a class="btn btn-outline-primary" [routerLink]="[itemPageRoute + '/full']" role="button" tabindex="0">
+        {{'item.page.link.full' | translate}}
+      </a>
+    </div>
+
+  </section>
+
+  <br/>
+
+  <p class="submitFormHelp">{{'item.page.copyright' | translate}}</p>
+
+</div>

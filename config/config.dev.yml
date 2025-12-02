@@ -330,7 +330,7 @@ browseBy:
   # The absolute lowest year to display in the dropdown (only used when no lowest date can be found for all items)
   defaultLowerLimit: 1900
   # If true, thumbnail images for items will be added to BOTH search and browse result lists.
-  showThumbnails: true
+  showThumbnails: false
   # The number of entries in a paginated browse results list.
   # Rounded to the nearest size in the list of selectable sizes on the
   # settings menu.
@@ -438,6 +438,10 @@ themes:
   - name: gallatin-syllabi
     extends: fda
     handle: 2451/34841
+
+  - name: calabash
+    extends: fda
+    handle: 2451/62242
 
   - name: fda
     headTags:

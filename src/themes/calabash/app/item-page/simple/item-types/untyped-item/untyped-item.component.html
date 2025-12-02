@@ -1,0 +1,155 @@
+<!--
+  Calabash Collection Item Page Template
+  Location: dspace-angular/src/themes/calabash/app/item-page/simple/item-types/untyped-item/
+  Filename: untyped-item.component.html
+
+  Fields for Calabash collections (journal articles):
+  - dc.title, dc.title.alternative
+  - dc.contributor.author, dc.contributor.translator
+  - dc.subject
+  - dc.date.issued
+  - dc.publisher
+  - dc.identifier.citation
+  - dc.identifier.DOI
+  - dc.description.abstract, dc.description
+  - dc.identifier.uri
+  - dc.identifier.issn
+  - dc.rights
+  - prism fields (publicationName, issueIdentifier, volume, startingPage, endingPage)
+-->
+
+<div class="item-page-content calabash-collection">
+
+  <!-- Title -->
+  <ds-generic-item-page-field
+    [item]="object"
+    [fields]="['dc.title']"
+    [label]="'item.page.title' | translate">
+  </ds-generic-item-page-field>
+
+  <!-- Alternative Title -->
+  <ds-generic-item-page-field
+    [item]="object"
+    [fields]="['dc.title.alternative']"
+    [label]="'item.page.titleAlternative' | translate">
+  </ds-generic-item-page-field>
+
+  <!-- Authors -->
+  <ds-generic-item-page-field
+    [item]="object"
+    [fields]="['dc.contributor.author']"
+    [label]="'item.page.author' | translate">
+  </ds-generic-item-page-field>
+
+  <!-- Translators -->
+  <ds-generic-item-page-field
+    [item]="object"
+    [fields]="['dc.contributor.translator']"
+    [label]="'item.page.translator' | translate">
+  </ds-generic-item-page-field>
+
+  <!-- Subject Keywords -->
+  <ds-generic-item-page-field
+    [item]="object"
+    [fields]="['dc.subject']"
+    [label]="'item.page.subject' | translate">
+  </ds-generic-item-page-field>
+
+  <!-- Date Issued -->
+  <ds-generic-item-page-field
+    [item]="object"
+    [fields]="['dc.date.issued']"
+    [label]="'item.page.date' | translate">
+  </ds-generic-item-page-field>
+
+  <!-- Publisher -->
+  <ds-generic-item-page-field
+    [item]="object"
+    [fields]="['dc.publisher']"
+    [label]="'item.page.publisher' | translate">
+  </ds-generic-item-page-field>
+
+  <!-- Journal Title (PRISM) -->
+  <ds-generic-item-page-field
+    [item]="object"
+    [fields]="['prism.publicationName']"
+    [label]="'item.page.journal' | translate">
+  </ds-generic-item-page-field>
+
+  <!-- Volume, Issue, Pages (grouped) -->
+  <div class="citation-details">
+    <ds-generic-item-page-field
+      [item]="object"
+      [fields]="['prism.volume']"
+      [label]="'item.page.volume' | translate">
+    </ds-generic-item-page-field>
+
+    <ds-generic-item-page-field
+      [item]="object"
+      [fields]="['prism.issueIdentifier']"
+      [label]="'item.page.issue' | translate">
+    </ds-generic-item-page-field>
+
+    <ds-generic-item-page-field
+      [item]="object"
+      [fields]="['prism.startingPage']"
+      [label]="'item.page.startPage' | translate">
+    </ds-generic-item-page-field>
+
+    <ds-generic-item-page-field
+      [item]="object"
+      [fields]="['prism.endingPage']"
+      [label]="'item.page.endPage' | translate">
+    </ds-generic-item-page-field>
+  </div>
+
+  <!-- Citation -->
+  <ds-generic-item-page-field
+    [item]="object"
+    [fields]="['dc.identifier.citation']"
+    [label]="'item.page.citation' | translate">
+  </ds-generic-item-page-field>
+
+  <!-- DOI -->
+  <ds-generic-item-page-field
+    [item]="object"
+    [fields]="['dc.identifier.DOI']"
+    [label]="'item.page.doi' | translate">
+  </ds-generic-item-page-field>
+
+  <!-- ISSN -->
+  <ds-generic-item-page-field
+    [item]="object"
+    [fields]="['dc.identifier.issn']"
+    [label]="'item.page.issn' | translate">
+  </ds-generic-item-page-field>
+
+  <!-- Abstract -->
+  <ds-generic-item-page-field
+    [item]="object"
+    [fields]="['dc.description.abstract']"
+    [label]="'item.page.abstract' | translate">
+  </ds-generic-item-page-field>
+
+  <!-- Description -->
+  <ds-generic-item-page-field
+    [item]="object"
+    [fields]="['dc.description']"
+    [label]="'item.page.description' | translate">
+  </ds-generic-item-page-field>
+
+  <!-- URI -->
+  <ds-generic-item-page-field
+    [item]="object"
+    [fields]="['dc.identifier.uri']"
+    [label]="'item.page.uri' | translate">
+  </ds-generic-item-page-field>
+
+  <!-- Rights -->
+  <ds-generic-item-page-field
+    [item]="object"
+    [fields]="['dc.rights']"
+    [label]="'item.page.rights' | translate">
+  </ds-generic-item-page-field>
+
+</div>

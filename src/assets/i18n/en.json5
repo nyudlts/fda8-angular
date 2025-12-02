@@ -2733,6 +2733,8 @@
 
   "item.listelement.badge": "Item",
 
+  "item.page.collectionslabel": "Appears in collection",
+
   "item.page.description": "Description",
 
   "item.page.journal-issn": "Journal ISSN",
@@ -6901,4 +6903,30 @@
   "dynamic-form-array.sortable-list.label": "Sortable list",
 
   "metadata-export-search.submit.error.limit-exceeded": "Only the first {{limit}} items will be exported",
+
+  "item.page.contributor.*": "Authors",
+
+  "item.page.contributor.author": "Authors",
+
+  "item.page.contributor.translator": "Translator",
+
+  "item.page.doi": "DOI",
+
+  "item.page.title": "Title",
+
+  "item.page.rights": "Rights",
+
+  "item.page.issue": "Issue",
+
+  "item.page.journal": "Journal Title",
+
+  "item.page.volume": "Volume",
+
+  "item.page.issn": "ISSN",
+
+  "item.page.date.issued": "Issue Date",
+
+  "item.page.relation.ispartofseries": "Series/Report no.",
+
+  "item.page.copyright": "Items in FDA are protected by copyright, with all rights reserved, unless otherwise indicated.",
 }

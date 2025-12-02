@@ -64,35 +64,6 @@ li:first-of-type .fda-syllabus-header {
   font-size: .9rem;
   font-weight: bold;
 }
-
 .pagination {
-  margin-top: 2rem;
-}
-
-.itemDisplayTable {
-  margin-top: 1.5rem;
-
-  th,
-  td {
-    vertical-align: text-top !important;
-    border-bottom: 1px solid #dee2e6;
-    border-top: none;
-  }
-
-  h2.simple-view-element-header {
-    display: none !important;
-  }
-
-  h1 {
-    margin-bottom: .5rem;
-  }
-}
-
-#expandable-navbar-section-browse_global {
-
-  a[href*="topic"],
-  a[href*="semester"],
-  a[href*="subject"] {
-    display: none !important;
-  }
+  margin-top:2rem;
 }

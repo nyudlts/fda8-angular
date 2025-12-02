@@ -50,6 +50,11 @@
                 "bundleName": "base-theme"
               },
               {
+                "input": "src/themes/dspace/styles/theme.scss",
+                "inject": false,
+                "bundleName": "dspace-theme"
+              },
+              {
                 "input": "src/themes/custom/styles/theme.scss",
                 "inject": false,
                 "bundleName": "custom-theme"
@@ -60,9 +65,9 @@
                 "bundleName": "fda-theme"
               },
               {
-                "input": "src/themes/dspace/styles/theme.scss",
+                "input": "src/themes/calabash/styles/theme.scss",
                 "inject": false,
-                "bundleName": "dspace-theme"
+                "bundleName": "calabash-theme"
               }
             ],
             "scripts": [],
