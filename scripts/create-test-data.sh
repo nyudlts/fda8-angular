@@ -26,11 +26,9 @@ done
 # Clean up old cookies
 rm -f /tmp/dspace-cookies.txt
 
-# Login and get auth token
+# Login
 echo "Authenticating..."
 
-# Step 1: Get CSRF token
-echo "Getting CSRF token..."
 curl -s "${DSPACE_REST_URL}/api/authn/status" \
   -c /tmp/dspace-cookies.txt \
   > /dev/null
@@ -42,9 +40,6 @@ if [ -z "$CSRF_TOKEN" ]; then
   exit 1
 fi
 
-echo "CSRF Token: ${CSRF_TOKEN:0:20}..."
-
-# Step 2: Login with URL-encoded credentials
 echo "Logging in as $DSPACE_ADMIN_EMAIL..."
 
 LOGIN_RESPONSE=$(curl -s -i -X POST "${DSPACE_REST_URL}/api/authn/login" \
@@ -55,27 +50,19 @@ LOGIN_RESPONSE=$(curl -s -i -X POST "${DSPACE_REST_URL}/api/authn/login" \
   --data-urlencode "user=${DSPACE_ADMIN_EMAIL}" \
   --data-urlencode "password=${DSPACE_ADMIN_PASS}")
 
-# Check login status
-if echo "$LOGIN_RESPONSE" | grep -q "HTTP/1.1 200"; then
-  echo "✅ Login successful"
-else
+if ! echo "$LOGIN_RESPONSE" | grep -q "HTTP/1.1 200"; then
   echo "❌ Login failed"
-  echo "$LOGIN_RESPONSE" | head -20
   exit 1
 fi
 
-# Extract authorization token (the full value including "Bearer")
 AUTH_TOKEN=$(echo "$LOGIN_RESPONSE" | grep -i "^Authorization:" | sed 's/Authorization: //' | tr -d '\r\n')
 
 if [ -z "$AUTH_TOKEN" ]; then
   echo "❌ Failed to get authorization token"
-  echo "Headers:"
-  echo "$LOGIN_RESPONSE" | grep -i "authorization"
   exit 1
 fi
 
 echo "✅ Authenticated"
-echo "Auth Token: ${AUTH_TOKEN:0:40}..."
 
 # Function to get current CSRF token
 get_current_csrf() {
@@ -95,17 +82,11 @@ api_request() {
     return 1
   fi
 
-  # Debug: Show what we're sending
-  echo "DEBUG: Making request to ${endpoint}" >&2
-  echo "DEBUG: Auth token starts with: ${AUTH_TOKEN:0:30}..." >&2
-  echo "DEBUG: CSRF token: ${csrf:0:20}..." >&2
-
   local temp_file=$(mktemp)
-  local headers_file=$(mktemp)
   local http_code
 
   if [ -n "$data" ]; then
-    http_code=$(curl -s -w "%{http_code}" -o "$temp_file" -D "$headers_file" \
+    http_code=$(curl -s -w "%{http_code}" -o "$temp_file" \
       -X "$method" "${DSPACE_REST_URL}${endpoint}" \
       -H "Content-Type: application/json" \
       -H "Authorization: ${AUTH_TOKEN}" \
@@ -114,7 +95,7 @@ api_request() {
       -c /tmp/dspace-cookies.txt \
       -d "$data")
   else
-    http_code=$(curl -s -w "%{http_code}" -o "$temp_file" -D "$headers_file" \
+    http_code=$(curl -s -w "%{http_code}" -o "$temp_file" \
       -X "$method" "${DSPACE_REST_URL}${endpoint}" \
       -H "Authorization: ${AUTH_TOKEN}" \
       -H "X-XSRF-TOKEN: ${csrf}" \
@@ -126,30 +107,13 @@ api_request() {
   rm "$temp_file"
 
   if [ "$http_code" -ge 200 ] && [ "$http_code" -lt 300 ]; then
-    rm "$headers_file"
     echo "$response"
     return 0
   else
-    echo "❌ HTTP $http_code" >&2
-    echo "Response: $response" >&2
-    echo "Response headers:" >&2
-    cat "$headers_file" >&2
-    rm "$headers_file"
+    echo "❌ HTTP $http_code: $response" >&2
     return 1
   fi
 }
-
-# Test authentication first
-echo ""
-echo "=== Testing Authentication ==="
-TEST_AUTH=$(api_request GET "/api/authn/status")
-if [ $? -eq 0 ]; then
-  echo "✅ Authentication verified"
-  echo "User info: $(echo "$TEST_AUTH" | jq -r '.email // "unknown"')"
-else
-  echo "❌ Authentication test failed"
-  exit 1
-fi
 
 # Create test community
 echo ""
@@ -163,7 +127,6 @@ COMMUNITY_RESPONSE=$(api_request POST "/api/core/communities" '{
 }')
 
 if [ $? -ne 0 ]; then
-  echo "Failed to create community"
   exit 1
 fi
 
@@ -172,20 +135,17 @@ COMMUNITY_HANDLE=$(echo "$COMMUNITY_RESPONSE" | jq -r '.handle')
 
 if [ -z "$COMMUNITY_UUID" ] || [ "$COMMUNITY_UUID" = "null" ]; then
   echo "❌ Failed to extract community UUID"
-  echo "Response: $COMMUNITY_RESPONSE"
   exit 1
 fi
 
-echo "✅ Community created"
-echo "UUID: $COMMUNITY_UUID"
-echo "Handle: $COMMUNITY_HANDLE"
+echo "✅ Community created (UUID: $COMMUNITY_UUID, Handle: $COMMUNITY_HANDLE)"
 
-# Function to create a collection
+# Function to create a collection - FIXED to send messages to stderr
 create_collection() {
   local name=$1
   local community_uuid=$2
 
-  echo "Creating $name..."
+  echo "Creating $name..." >&2  # Send to stderr
 
   local response=$(api_request POST "/api/core/collections?parent=${community_uuid}" '{
     "name": "'"$name"'",
@@ -201,7 +161,14 @@ create_collection() {
   local uuid=$(echo "$response" | jq -r '.uuid')
   local handle=$(echo "$response" | jq -r '.handle')
 
-  echo "✅ Created (UUID: $uuid, Handle: $handle)"
+  if [ -z "$uuid" ] || [ "$uuid" = "null" ]; then
+    echo "❌ Failed to extract UUID" >&2
+    return 1
+  fi
+
+  echo "✅ $name created (UUID: $uuid, Handle: $handle)" >&2  # Send to stderr
+
+  # Only output the data to stdout (no extra text)
   echo "$uuid|$handle"
 }
 
@@ -249,13 +216,13 @@ SYLLABI_RESULT=$(create_collection "Syllabi Test Collection" "$COMMUNITY_UUID")
 SYLLABI_COLLECTION_UUID=$(echo "$SYLLABI_RESULT" | cut -d'|' -f1)
 SYLLABI_COLLECTION_HANDLE=$(echo "$SYLLABI_RESULT" | cut -d'|' -f2)
 
-# Function to create an item
+# Function to create an item - FIXED to send messages to stderr
 create_item() {
   local collection_uuid=$1
   local title=$2
   local author=$3
 
-  echo "Creating $title..."
+  echo "Creating $title..." >&2  # Send to stderr
 
   local response=$(api_request POST "/api/core/items?owningCollection=${collection_uuid}" '{
     "name": "'"$title"'",
@@ -273,7 +240,15 @@ create_item() {
   fi
 
   local uuid=$(echo "$response" | jq -r '.uuid')
-  echo "✅ Created (UUID: $uuid)"
+
+  if [ -z "$uuid" ] || [ "$uuid" = "null" ]; then
+    echo "❌ Failed to extract UUID" >&2
+    return 1
+  fi
+
+  echo "✅ $title created (UUID: $uuid)" >&2  # Send to stderr
+
+  # Only output UUID to stdout (no extra text)
   echo "$uuid"
 }
 
@@ -311,6 +286,7 @@ EOF
 echo ""
 echo "✅ Test data created successfully!"
 
+# Export for GitHub Actions - CLEAN FORMAT
 if [ -n "$GITHUB_OUTPUT" ]; then
   {
     echo "default_item_uuid=$DEFAULT_ITEM_UUID"
@@ -323,5 +299,14 @@ if [ -n "$GITHUB_OUTPUT" ]; then
     echo "calabash_item_uuid=$CALABASH_ITEM_UUID"
     echo "openscholarship_item_uuid=$OPENSCHOLARSHIP_ITEM_UUID"
     echo "syllabi_item_uuid=$SYLLABI_ITEM_UUID"
+    echo "jones_collection_handle=$JONES_COLLECTION_HANDLE"
+    echo "relics_collection_handle=$RELICS_COLLECTION_HANDLE"
+    echo "laefer_collection_handle=$LAEFER_COLLECTION_HANDLE"
+    echo "tandon_collection_handle=$TANDON_COLLECTION_HANDLE"
+    echo "tandoncapstone_collection_handle=$TANDONCAPSTONE_COLLECTION_HANDLE"
+    echo "dnp_collection_handle=$DNP_COLLECTION_HANDLE"
+    echo "calabash_collection_handle=$CALABASH_COLLECTION_HANDLE"
+    echo "openscholarship_collection_handle=$OPENSCHOLARSHIP_COLLECTION_HANDLE"
+    echo "syllabi_collection_handle=$SYLLABI_COLLECTION_HANDLE"
   } >> "$GITHUB_OUTPUT"
 fi
