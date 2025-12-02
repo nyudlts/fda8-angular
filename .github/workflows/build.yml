@@ -218,3 +218,4 @@ jobs:
 
       - name: Shutdown Docker containers
         run: docker compose -f ./docker/docker-compose-ci.yml down
+
