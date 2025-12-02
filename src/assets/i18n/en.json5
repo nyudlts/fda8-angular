@@ -1,4 +1,5 @@
 {
+
   "401.help": "You're not authorized to access this page. You can use the button below to get back to the home page.",
 
   "401.link.home-page": "Take me to the home page",
@@ -2801,7 +2802,7 @@
 
   "item.page.citation": "Citation",
 
-  "item.page.collections": "Collections",
+  "item.page.collections": "Appears in Collections",
 
   "item.page.collections.loading": "Loading...",
 
@@ -2811,7 +2812,7 @@
 
   "item.page.edit": "Edit this item",
 
-  "item.page.files": "Files",
+  "item.page.files": "Files in This Item",
 
   "item.page.filesection.description": "Description:",
 
@@ -2825,7 +2826,7 @@
 
   "item.page.journal.search.title": "Articles in this journal",
 
-  "item.page.link.full": "Full item page",
+  "item.page.link.full": "Show full item record",
 
   "item.page.link.simple": "Simple item page",
 
@@ -2885,7 +2886,7 @@
 
   "item.preview.dc.description.abstract": "Abstract:",
 
-  "item.preview.dc.identifier.other": "Other identifier:",
+  "item.preview.dc.identifier.other": "Other Identifier",
 
   "item.preview.dc.language.iso": "Language:",
 
@@ -2904,8 +2905,6 @@
   "item.preview.dc.relation.ispartofseries": "Is part of series",
 
   "item.preview.dc.rights": "Rights",
-
-  "item.preview.dc.identifier.other": "Other Identifier",
 
   "item.preview.dc.relation.issn": "ISSN",
 
@@ -4090,7 +4089,6 @@
   "syllabus-relationships.search.results.head": "Syllabus Search Results",
 
   "syllabus.search.title": "Syllabus Search",
-
 
   "media-viewer.next": "Next",
 
@@ -5718,7 +5716,7 @@
 
   "thumbnail.person.placeholder": "No Profile Picture Available",
 
-  "title": "FDA title",
+  title: "FDA title",
 
   "vocabulary-treeview.header": "Hierarchical tree view",
 
@@ -6253,152 +6251,263 @@
   "service.overview.delete.header": "Delete Service",
 
   "ldn-registered-services.title": "Registered Services",
+
   "ldn-registered-services.table.name": "Name",
+
   "ldn-registered-services.table.description": "Description",
+
   "ldn-registered-services.table.status": "Status",
+
   "ldn-registered-services.table.action": "Action",
+
   "ldn-registered-services.new": "NEW",
+
   "ldn-registered-services.new.breadcrumbs": "Registered Services",
 
   "ldn-service.overview.table.enabled": "Enabled",
+
   "ldn-service.overview.table.disabled": "Disabled",
+
   "ldn-service.overview.table.clickToEnable": "Click to enable",
+
   "ldn-service.overview.table.clickToDisable": "Click to disable",
 
   "ldn-edit-registered-service.title": "Edit Service",
+
   "ldn-create-service.title": "Create service",
+
   "service.overview.create.modal": "Create Service",
+
   "service.overview.create.body": "Please confirm the creation of this service.",
+
   "ldn-service-status": "Status",
+
   "service.confirm.create": "Create",
+
   "service.refuse.create": "Cancel",
+
   "ldn-register-new-service.title": "Register a new service",
+
   "ldn-new-service.form.label.submit": "Save",
+
   "ldn-new-service.form.label.name": "Name",
+
   "ldn-new-service.form.label.description": "Description",
+
   "ldn-new-service.form.label.url": "Service URL",
+
   "ldn-new-service.form.label.ip-range": "Service IP range",
+
   "ldn-new-service.form.label.score": "Level of trust",
+
   "ldn-new-service.form.label.ldnUrl": "LDN Inbox URL",
+
   "ldn-new-service.form.placeholder.name": "Please provide service name",
+
   "ldn-new-service.form.placeholder.description": "Please provide a description regarding your service",
+
   "ldn-new-service.form.placeholder.url": "Please input the URL for users to check out more information about the service",
+
   "ldn-new-service.form.placeholder.lowerIp": "IPv4 range lower bound",
+
   "ldn-new-service.form.placeholder.upperIp": "IPv4 range upper bound",
+
   "ldn-new-service.form.placeholder.ldnUrl": "Please specify the URL of the LDN Inbox",
+
   "ldn-new-service.form.placeholder.score": "Please enter a value between 0 and 1. Use the “.” as decimal separator",
+
   "ldn-service.form.label.placeholder.default-select": "Select a pattern",
 
   "ldn-service.form.pattern.ack-accept.label": "Acknowledge and Accept",
+
   "ldn-service.form.pattern.ack-accept.description": "This pattern is used to acknowledge and accept a request (offer). It implies an intention to act on the request.",
+
   "ldn-service.form.pattern.ack-accept.category": "Acknowledgements",
 
   "ldn-service.form.pattern.ack-reject.label": "Acknowledge and Reject",
+
   "ldn-service.form.pattern.ack-reject.description": "This pattern is used to acknowledge and reject a request (offer). It signifies no further action regarding the request.",
+
   "ldn-service.form.pattern.ack-reject.category": "Acknowledgements",
 
   "ldn-service.form.pattern.ack-tentative-accept.label": "Acknowledge and Tentatively Accept",
+
   "ldn-service.form.pattern.ack-tentative-accept.description": "This pattern is used to acknowledge and tentatively accept a request (offer). It implies an intention to act, which may change.",
+
   "ldn-service.form.pattern.ack-tentative-accept.category": "Acknowledgements",
 
   "ldn-service.form.pattern.ack-tentative-reject.label": "Acknowledge and Tentatively Reject",
+
   "ldn-service.form.pattern.ack-tentative-reject.description": "This pattern is used to acknowledge and tentatively reject a request (offer). It signifies no further action, subject to change.",
+
   "ldn-service.form.pattern.ack-tentative-reject.category": "Acknowledgements",
 
   "ldn-service.form.pattern.announce-endorsement.label": "Announce Endorsement",
+
   "ldn-service.form.pattern.announce-endorsement.description": "This pattern is used to announce the existence of an endorsement, referencing the endorsed resource.",
+
   "ldn-service.form.pattern.announce-endorsement.category": "Announcements",
 
   "ldn-service.form.pattern.announce-ingest.label": "Announce Ingest",
+
   "ldn-service.form.pattern.announce-ingest.description": "This pattern is used to announce that a resource has been ingested.",
+
   "ldn-service.form.pattern.announce-ingest.category": "Announcements",
 
   "ldn-service.form.pattern.announce-relationship.label": "Announce Relationship",
+
   "ldn-service.form.pattern.announce-relationship.description": "This pattern is used to announce a relationship between two resources.",
+
   "ldn-service.form.pattern.announce-relationship.category": "Announcements",
 
   "ldn-service.form.pattern.announce-review.label": "Announce Review",
+
   "ldn-service.form.pattern.announce-review.description": "This pattern is used to announce the existence of a review, referencing the reviewed resource.",
+
   "ldn-service.form.pattern.announce-review.category": "Announcements",
 
   "ldn-service.form.pattern.announce-service-result.label": "Announce Service Result",
+
   "ldn-service.form.pattern.announce-service-result.description": "This pattern is used to announce the existence of a 'service result', referencing the relevant resource.",
+
   "ldn-service.form.pattern.announce-service-result.category": "Announcements",
 
   "ldn-service.form.pattern.request-endorsement.label": "Request Endorsement",
+
   "ldn-service.form.pattern.request-endorsement.description": "This pattern is used to request endorsement of a resource owned by the origin system.",
+
   "ldn-service.form.pattern.request-endorsement.category": "Requests",
 
   "ldn-service.form.pattern.request-ingest.label": "Request Ingest",
+
   "ldn-service.form.pattern.request-ingest.description": "This pattern is used to request that the target system ingest a resource.",
+
   "ldn-service.form.pattern.request-ingest.category": "Requests",
 
   "ldn-service.form.pattern.request-review.label": "Request Review",
+
   "ldn-service.form.pattern.request-review.description": "This pattern is used to request a review of a resource owned by the origin system.",
+
   "ldn-service.form.pattern.request-review.category": "Requests",
 
   "ldn-service.form.pattern.undo-offer.label": "Undo Offer",
+
   "ldn-service.form.pattern.undo-offer.description": "This pattern is used to undo (retract) an offer previously made.",
+
   "ldn-service.form.pattern.undo-offer.category": "Undo",
 
   "ldn-new-service.form.label.placeholder.selectedItemFilter": "No Item Filter Selected",
+
   "ldn-new-service.form.label.ItemFilter": "Item Filter",
+
   "ldn-new-service.form.label.automatic": "Automatic",
+
   "ldn-new-service.form.error.name": "Name is required",
+
   "ldn-new-service.form.error.url": "URL is required",
+
   "ldn-new-service.form.error.ipRange": "Please enter a valid IP range",
+
   "ldn-new-service.form.hint.ipRange": "Please enter a valid IpV4 in both range bounds (note: for single IP, please enter the same value in both fields)",
+
   "ldn-new-service.form.error.ldnurl": "LDN URL is required",
+
   "ldn-new-service.form.error.patterns": "At least a pattern is required",
+
   "ldn-new-service.form.error.score": "Please enter a valid score (between 0 and 1). Use the “.” as decimal separator",
 
   "ldn-new-service.form.label.inboundPattern": "Supported Pattern",
+
   "ldn-new-service.form.label.addPattern": "+ Add more",
+
   "ldn-new-service.form.label.removeItemFilter": "Remove",
+
   "ldn-register-new-service.breadcrumbs": "New Service",
+
   "service.overview.delete.body": "Are you sure you want to delete this service?",
+
   "service.overview.edit.body": "Do you confirm the changes?",
+
   "service.overview.edit.modal": "Edit Service",
+
   "service.detail.update": "Confirm",
+
   "service.detail.return": "Cancel",
+
   "service.overview.reset-form.body": "Are you sure you want to discard the changes and leave?",
+
   "service.overview.reset-form.modal": "Discard Changes",
+
   "service.overview.reset-form.reset-confirm": "Discard",
+
   "admin.registries.services-formats.modify.success.head": "Successful Edit",
+
   "admin.registries.services-formats.modify.success.content": "The service has been edited",
+
   "admin.registries.services-formats.modify.failure.head": "Failed Edit",
+
   "admin.registries.services-formats.modify.failure.content": "The service has not been edited",
+
   "ldn-service-notification.created.success.title": "Successful Create",
+
   "ldn-service-notification.created.success.body": "The service has been created",
+
   "ldn-service-notification.created.failure.title": "Failed Create",
+
   "ldn-service-notification.created.failure.body": "The service has not been created",
+
   "ldn-service-notification.created.warning.title": "Please select at least one Inbound Pattern",
+
   "ldn-enable-service.notification.success.title": "Successful status updated",
+
   "ldn-enable-service.notification.success.content": "The service status has been updated",
+
   "ldn-service-delete.notification.success.title": "Successful Deletion",
+
   "ldn-service-delete.notification.success.content": "The service has been deleted",
+
   "ldn-service-delete.notification.error.title": "Failed Deletion",
+
   "ldn-service-delete.notification.error.content": "The service has not been deleted",
+
   "service.overview.reset-form.reset-return": "Cancel",
+
   "service.overview.delete": "Delete service",
+
   "ldn-edit-service.title": "Edit service",
+
   "ldn-edit-service.form.label.name": "Name",
+
   "ldn-edit-service.form.label.description": "Description",
+
   "ldn-edit-service.form.label.url": "Service URL",
+
   "ldn-edit-service.form.label.ldnUrl": "LDN Inbox URL",
+
   "ldn-edit-service.form.label.inboundPattern": "Inbound Pattern",
+
   "ldn-edit-service.form.label.noInboundPatternSelected": "No Inbound Pattern",
+
   "ldn-edit-service.form.label.selectedItemFilter": "Selected Item Filter",
+
   "ldn-edit-service.form.label.selectItemFilter": "No Item Filter",
+
   "ldn-edit-service.form.label.automatic": "Automatic",
+
   "ldn-edit-service.form.label.addInboundPattern": "+ Add more",
+
   "ldn-edit-service.form.label.submit": "Save",
+
   "ldn-edit-service.breadcrumbs": "Edit Service",
+
   "ldn-service.control-constaint-select-none": "Select none",
 
   "ldn-register-new-service.notification.error.title": "Error",
+
   "ldn-register-new-service.notification.error.content": "An error occurred while creating this process",
+
   "ldn-register-new-service.notification.success.title": "Success",
+
   "ldn-register-new-service.notification.success.content": "The process was successfully created",
 
   "submission.sections.notify.info": "The selected service is compatible with the item according to its current status. {{ service.name }}: {{ service.description }}",
@@ -6418,6 +6527,7 @@
   "menu.section.services_new": "LDN Service",
 
   "quality-assurance.topics.description-with-target": "Below you can see all the topics received from the subscriptions to {{source}} in regards to the",
+
   "quality-assurance.events.description": "Below the list of all the suggestions for the selected topic <b>{{topic}}</b>, related to <b>{{source}}</b>.",
 
   "quality-assurance.events.description-with-topic-and-target": "Below the list of all the suggestions for the selected topic <b>{{topic}}</b>, related to <b>{{source}}</b> and ",
@@ -6927,4 +7037,304 @@
   "item.page.relation.ispartofseries": "Series/Report no.",
 
   "item.page.copyright": "Items in FDA are protected by copyright, with all rights reserved, unless otherwise indicated.",
+
+  "jones.item.page.title": "Title",
+
+  "jones.item.page.date.issued": "Date of digital object",
+
+  "jones.item.page.date.created": "Date of object depicted",
+
+  "jones.item.page.contributor.*": "Authors",
+
+  "jones.item.page.description": "Description of particular view",
+
+  "jones.item.page.identifier.other": "Technical designation of object",
+
+  "jones.item.page.description.equipment": "Technical specifications",
+
+  "jones.item.page.description.additional": "Additional description",
+
+  "relics.item.page.title": "Title",
+
+  "relics.item.page.contributor.*": "Authors",
+
+  "relics.item.page.coverage.spatial": "Country",
+
+  "relics.item.page.date.issued": "Date",
+
+  "jones.item.page.language.iso": "Language",
+
+  "jones.item.page.format.mimetype": "File format",
+
+  "jones.item.page.relation.isreferencedby": "Bibliographic citation",
+
+  "jones.item.page.relation.uri": "Citation link",
+
+  "jones.item.page.rights": "Rights",
+
+  "jones.item.page.subject": "Subject Keywords",
+
+  "relics.item.page.publisher": "Publisher",
+
+  "relics.item.page.type": "Type",
+
+  "relics.item.page.source": "Source",
+
+  "relics.item.page.description": "Description",
+
+  "relics.item.page.rights": "Rights",
+
+  "tandon.item.page.title": "Title",
+
+  "tandon.item.page.contributor.*": "Authors",
+
+  "tandon.item.page.date.issued": "Date Issued",
+
+  "tandon.item.page.citation": "Citation",
+
+  "tandon.item.page.abstract": "Abstract",
+
+  "tandon.item.page.description.firstPage": "First Page",
+
+  "tandon.item.page.description.lastPage": "Last Page",
+
+  "tandon.item.page.doi": "DOI",
+
+  "tandon.item.page.type": "Type",
+
+  "tandoncapstone.item.page.title": "Title",
+
+  "tandoncapstone.item.page.contributor.author": "Authors",
+
+  "tandoncapstone.item.page.contributor.advisor": "Capstone Professor",
+
+  "tandoncapstone.item.page.date.issued": "Date Issued",
+
+  "tandoncapstone.item.page.language.iso": "Language",
+
+  "tandoncapstone.item.page.abstract": "Abstract",
+
+  "tandoncapstone.item.page.type": "Type",
+
+  "tandoncapstone.item.page.format.medium": "Medium",
+
+  "tandoncapstone.item.page.format.Extent": "Extent",
+
+  "tandoncapstone.item.page.uri": "URI",
+
+  "dnp.item.page.title": "Title",
+
+  "dnp.item.page.title.alternative": "Alternate Title",
+
+  "dnp.item.page.contributor.author": "Author",
+
+  "dnp.item.page.contributor.advisor": "DNP Project Team Member",
+
+  "dnp.item.page.date.issued": "Degree Year",
+
+  "dnp.item.page.description": "Description",
+
+  "dnp.item.page.abstract": "Abstract",
+
+  "dnp.item.page.description.sponsorship": "Sponsorship",
+
+  "dnp.item.page.uri": "FDA Handle",
+
+  "dnp.item.page.subject": "Keyword",
+
+  "dnp.item.page.subject.mesh": "MeSH term",
+
+  "dnp.item.page.subject.cinahl": "CINAHL term",
+
+  "dnp.item.page.subject.apa": "APA Thesaurus term",
+
+  "dnp.item.page.rights": "Rights",
+
+  "dnp.item.page.type": "Type",
+
+  "dnp.item.page.format.medium": "Medium",
+
+  "dnp.item.page.language.iso": "Language",
+
+  "dnp.item.page.thesis.degree.name": "Degree",
+
+  "dnp.item.page.thesis.degree.level": "Degree Level",
+
+  "dnp.item.page.thesis.degree.discipline": "Discipline",
+
+  "dnp.item.page.thesis.degree.grantor": "Grantor",
+
+  "openscholarship.item.page.title": "Title",
+
+  "openscholarship.item.page.contributor.author": "Authors",
+
+  "openscholarship.item.page.date.issued": "Date Issued",
+
+  "openscholarship.item.page.abstract": "Abstract",
+
+  "openscholarship.item.page.description.sponsorship": "Sponsorship",
+
+  "openscholarship.item.page.doi": "DOI",
+
+  "openscholarship.item.page.rights": "Rights",
+
+  "openscholarship.item.page.subject": "Subject",
+
+  "laefer.item.page.title": "Title",
+
+  "laefer.item.page.contributor.*": "Authors",
+
+  "laefer.item.page.contributor.author": "Authors",
+
+  "laefer.item.page.contributor.editor": "Editors",
+
+  "laefer.item.page.date.issued": "Issue Date",
+
+  "laefer.item.page.description": "Description",
+
+  "laefer.item.page.abstract": "Abstract",
+
+  "laefer.item.page.identifier": "Other Identifiers",
+
+  "laefer.item.page.citation": "Citation",
+
+  "laefer.item.page.identifier.govdoc": "Gov't Doc #",
+
+  "laefer.item.page.isbn": "ISBN",
+
+  "laefer.item.page.ismn": "ISMN",
+
+  "laefer.item.page.issn": "ISSN",
+
+  "laefer.item.page.uri": "URI",
+
+  "laefer.item.page.publisher": "Publisher",
+
+  "laefer.item.page.relation.ispartofseries": "Series/Report no.",
+
+  "laefer.item.page.subject": "Keywords",
+
+  "laefer.item.page.title.alternative": "Other Titles",
+
+  "laefer.item.page.rights": "Rights",
+
+  "calabash.item.page.title": "Title",
+
+  "calabash.item.page.contributor.*": "Authors",
+
+  "calabash.item.page.contributor.author": "Authors",
+
+  "calabash.item.page.contributor.translator": "Translator",
+
+  "calabash.item.page.date.issued": "Issue Date",
+
+  "calabash.item.page.description": "Description",
+
+  "calabash.item.page.abstract": "Abstract",
+
+  "calabash.item.page.identifier": "Other Identifiers",
+
+  "calabash.item.page.citation": "Citation",
+
+  "calabash.item.page.issn": "ISSN",
+
+  "calabash.item.page.uri": "URI",
+
+  "calabash.item.page.doi": "DOI",
+
+  "calabash.item.page.publisher": "Publisher",
+
+  "calabash.item.page.subject": "Subject Keywords",
+
+  "calabash.item.page.title.alternative": "Other Titles",
+
+  "calabash.item.page.rights": "Rights",
+
+  "calabash.item.page.type": "Type",
+
+  "calabash.item.page.prism.endingPage": "Last Page",
+
+  "calabash.item.page.prism.issueIdentifier": "Issue",
+
+  "calabash.item.page.prism.publicationName": "Journal Title",
+
+  "calabash.item.page.prism.startingPage": "First Page",
+
+  "calabash.item.page.prism.volume": "Volume",
+
+  "syllabi.item.page.title": "Title",
+
+  "syllabi.item.page.contributor.instructor": "Instructor(s)",
+
+  "syllabi.item.page.identifier.coursenumber": "Course Number",
+
+  "syllabi.item.page.description.semester": "Term",
+
+  "syllabi.item.page.subject": "Keywords",
+
+  "syllabi.item.page.uri": "URI",
+
+  "syllabi.item.page.date.issued": "Date",
+
+  "syllabi.item.page.rights": "Rights",
+
+  "item.page.type": "Type",
+
+  "item.page.source": "Source",
+
+  "item.page.coverage.spatial": "Location",
+
+  "item.page.identifier.other": "Other Identifier",
+
+  "item.page.language.iso": "Language",
+
+  "item.page.format.mimetype": "Format",
+
+  "item.page.description.equipment": "Equipment",
+
+  "item.page.description.additional": "Additional Information",
+
+  "item.page.relation.isreferencedby": "Referenced By",
+
+  "item.page.relation.uri": "Related Link",
+
+  "item.page.description.firstPage": "First Page",
+
+  "item.page.description.lastPage": "Last Page",
+
+  "item.page.contributor.advisor": "Advisor",
+
+  "item.page.contributor.instructor": "Instructor",
+
+  "item.page.thesis.degree.name": "Degree",
+
+  "item.page.thesis.degree.level": "Degree Level",
+
+  "item.page.thesis.degree.discipline": "Discipline",
+
+  "item.page.thesis.degree.grantor": "Grantor",
+
+  "item.page.subject.mesh": "MeSH Terms",
+
+  "item.page.subject.cinahl": "CINAHL Terms",
+
+  "item.page.subject.apa": "APA Thesaurus Terms",
+
+  "item.page.description.sponsorship": "Sponsorship",
+
+  "item.page.format.medium": "Medium",
+
+  "item.page.prism.publicationName": "Publication Name",
+
+  "item.page.prism.issueIdentifier": "Issue",
+
+  "item.page.prism.volume": "Volume",
+
+  "item.page.prism.startingPage": "Starting Page",
+
+  "item.page.prism.endingPage": "Ending Page",
+
+  "item.page.identifier.coursenumber": "Course Number",
+
+  "item.page.description.semester": "Semester",
 }

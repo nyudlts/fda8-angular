@@ -41,6 +41,22 @@ export default defineConfig({
   e2e: {
     // Setup our plugins for e2e tests
     setupNodeEvents(on, config) {
+      // Configure Chrome launch args FIRST
+      on('before:browser:launch', (browser, launchOptions) => {
+        if (browser.name === 'chrome' || browser.family === 'chromium') {
+          launchOptions.args.push('--no-sandbox');
+          launchOptions.args.push('--disable-setuid-sandbox');
+          launchOptions.args.push('--disable-dev-shm-usage');
+          launchOptions.args.push('--disable-gpu');
+
+          if (process.env.CI) {
+            launchOptions.args.push('--disable-software-rasterizer');
+            launchOptions.args.push('--disable-extensions');
+          }
+        }
+
+        return launchOptions;
+      });
       return require('./cypress/plugins/index.ts')(on, config);
     },
     // This is the base URL that Cypress will run all tests against
