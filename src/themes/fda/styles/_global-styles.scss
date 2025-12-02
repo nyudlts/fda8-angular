@@ -87,3 +87,11 @@ li:first-of-type .fda-syllabus-header {
     margin-bottom: .5rem;
   }
 }
+
+#expandable-navbar-section-browse_global {
+
+  a[href*="topic"],
+  a[href*="semester"] {
+    display: none !important;
+  }
+}
