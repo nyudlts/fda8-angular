@@ -91,7 +91,8 @@ li:first-of-type .fda-syllabus-header {
 #expandable-navbar-section-browse_global {
 
   a[href*="topic"],
-  a[href*="semester"] {
+  a[href*="semester"],
+  a[href*="subject"] {
     display: none !important;
   }
 }
