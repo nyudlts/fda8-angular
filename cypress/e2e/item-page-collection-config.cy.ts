@@ -6,15 +6,15 @@ describe('Item Page Collection Configuration', () => {
 
   // Test item UUIDs from environment
   const DEFAULT_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_FDA_DEFAULT_ITEM'));
-  const JONES_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_JONES_ITEM') || 'skip');
-  const RELICS_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_RELICS_ITEM') || 'skip');
-  const LAEFER_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_LAEFER_ITEM') || 'skip');
-  const TANDON_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_TANDON_ITEM') || 'skip');
-  const TANDONCAPSTONE_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_TANDONCAPSTONE_ITEM') || 'skip');
-  const DNP_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_DNP_ITEM') || 'skip');
-  const CALABASH_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_CALABASH_ITEM') || 'skip');
-  const OPENSCHOLARSHIP_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_OPENSCHOLARSHIP_ITEM') || 'skip');
-  const SYLLABI_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_SYLLABI_ITEM') || 'skip');
+  const JONES_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_FDA_JONES_ITEM') || 'skip');
+  const RELICS_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_FDA_RELICS_ITEM') || 'skip');
+  const LAEFER_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_FDA_LAEFER_ITEM') || 'skip');
+  const TANDON_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_FDA_TANDON_ITEM') || 'skip');
+  const TANDONCAPSTONE_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_FDA_TANDONCAPSTONE_ITEM') || 'skip');
+  const DNP_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_FDA_DNP_ITEM') || 'skip');
+  const CALABASH_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_FDA_CALABASH_ITEM') || 'skip');
+  const OPENSCHOLARSHIP_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_FDA_OPENSCHOLARSHIP_ITEM') || 'skip');
+  const SYLLABI_ITEM = '/items/'.concat(Cypress.env('DSPACE_TEST_FDA_SYLLABI_ITEM') || 'skip');
 
   describe('Default Collection Item', () => {
     beforeEach(() => {
@@ -86,7 +86,7 @@ describe('Item Page Collection Configuration', () => {
   // Jones Collection Tests
   describe('Jones Collection Item', () => {
     beforeEach(function() {
-      if (!Cypress.env('DSPACE_TEST_JONES_ITEM')) {
+      if (!Cypress.env('DSPACE_TEST_FDA_JONES_ITEM')) {
         this.skip();
       }
       cy.visit(JONES_ITEM);
@@ -108,7 +108,8 @@ describe('Item Page Collection Configuration', () => {
 
         if (hasJonesLabels) {
           cy.log('Jones-specific labels found');
-          expect(hasJonesLabels).to.be.true;
+          const result = expect(hasJonesLabels).to.be.true;
+          cy.wrap(result);
         } else {
           cy.log('No Jones-specific labels found');
         }
@@ -124,7 +125,7 @@ describe('Item Page Collection Configuration', () => {
   // Relics Collection Tests
   describe('Relics Collection Item', () => {
     beforeEach(function() {
-      if (!Cypress.env('DSPACE_TEST_RELICS_ITEM')) {
+      if (!Cypress.env('DSPACE_TEST_FDA_RELICS_ITEM')) {
         this.skip();
       }
       cy.visit(RELICS_ITEM);
@@ -144,7 +145,8 @@ describe('Item Page Collection Configuration', () => {
 
         if (hasRelicsFields) {
           cy.log('Relics-specific fields found');
-          expect(hasRelicsFields).to.be.true;
+          const result = expect(hasRelicsFields).to.be.true;
+          cy.wrap(result);
         }
       });
     });
@@ -158,7 +160,7 @@ describe('Item Page Collection Configuration', () => {
   // Laefer Collection Tests
   describe('Laefer Collection Item', () => {
     beforeEach(function() {
-      if (!Cypress.env('DSPACE_TEST_LAEFER_ITEM')) {
+      if (!Cypress.env('DSPACE_TEST_FDA_LAEFER_ITEM')) {
         this.skip();
       }
       cy.visit(LAEFER_ITEM);
@@ -178,7 +180,7 @@ describe('Item Page Collection Configuration', () => {
   // Tandon Collection Tests
   describe('Tandon Collection Item', () => {
     beforeEach(function() {
-      if (!Cypress.env('DSPACE_TEST_TANDON_ITEM')) {
+      if (!Cypress.env('DSPACE_TEST_FDA_TANDON_ITEM')) {
         this.skip();
       }
       cy.visit(TANDON_ITEM);
@@ -211,7 +213,7 @@ describe('Item Page Collection Configuration', () => {
   // Tandon Capstone Collection Tests
   describe('Tandon Capstone Collection Item', () => {
     beforeEach(function() {
-      if (!Cypress.env('DSPACE_TEST_TANDONCAPSTONE_ITEM')) {
+      if (!Cypress.env('DSPACE_TEST_FDA_TANDONCAPSTONE_ITEM')) {
         this.skip();
       }
       cy.visit(TANDONCAPSTONE_ITEM);
@@ -240,7 +242,7 @@ describe('Item Page Collection Configuration', () => {
   // DNP Collection Tests
   describe('DNP Collection Item', () => {
     beforeEach(function() {
-      if (!Cypress.env('DSPACE_TEST_DNP_ITEM')) {
+      if (!Cypress.env('DSPACE_TEST_FDA_DNP_ITEM')) {
         this.skip();
       }
       cy.visit(DNP_ITEM);
@@ -275,7 +277,7 @@ describe('Item Page Collection Configuration', () => {
   // Calabash Collection Tests
   describe('Calabash Collection Item', () => {
     beforeEach(function() {
-      if (!Cypress.env('DSPACE_TEST_CALABASH_ITEM')) {
+      if (!Cypress.env('DSPACE_TEST_FDA_CALABASH_ITEM')) {
         this.skip();
       }
       cy.visit(CALABASH_ITEM);
@@ -310,7 +312,7 @@ describe('Item Page Collection Configuration', () => {
   // OpenScholarship Collection Tests
   describe('OpenScholarship Collection Item', () => {
     beforeEach(function() {
-      if (!Cypress.env('DSPACE_TEST_OPENSCHOLARSHIP_ITEM')) {
+      if (!Cypress.env('DSPACE_TEST_FDA_OPENSCHOLARSHIP_ITEM')) {
         this.skip();
       }
       cy.visit(OPENSCHOLARSHIP_ITEM);
@@ -339,7 +341,7 @@ describe('Item Page Collection Configuration', () => {
   // Syllabi Collection Tests
   describe('Syllabi Collection Item', () => {
     beforeEach(function() {
-      if (!Cypress.env('DSPACE_TEST_SYLLABI_ITEM')) {
+      if (!Cypress.env('DSPACE_TEST_FDA_SYLLABI_ITEM')) {
         this.skip();
       }
       cy.visit(SYLLABI_ITEM);
@@ -399,7 +401,7 @@ describe('Item Page Collection Configuration', () => {
         const text = $link.text().trim();
         const ariaLabel = $link.attr('aria-label');
         const hasAccessibleText = text.length > 0 || !!ariaLabel;
-        expect(hasAccessibleText, 'Link should have text or aria-label').to.be.true;
+        cy.wrap(hasAccessibleText, 'Link should have text or aria-label').should('be.true');
       });
     });
   });

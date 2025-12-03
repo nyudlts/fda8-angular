@@ -16,7 +16,6 @@ import {
 import { TranslateModule } from '@ngx-translate/core';
 import { filter } from 'rxjs/operators';
 
-import { Context } from '../../../../../../../app/core/shared/context.model';
 import { Item } from '../../../../../../../app/core/shared/item.model';
 import { getFirstSucceededRemoteDataPayload } from '../../../../../../../app/core/shared/operators';
 import { ViewMode } from '../../../../../../../app/core/shared/view-mode.model';
