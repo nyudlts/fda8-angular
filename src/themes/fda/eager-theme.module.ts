@@ -39,6 +39,7 @@ const DECLARATIONS = [
     RootModule,
     ...DECLARATIONS,
   ],
+  declarations: [],
   providers: [
     ...ENTRY_COMPONENTS.map((component) => ({ provide: component })),
   ],

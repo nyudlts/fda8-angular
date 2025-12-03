@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
-import { EagerThemeModule as CalabashEagerThemeModule } from './calabash/eager-theme.module';
-// import { EagerThemeModule as CustomEagerThemeModule } from './custom/eager-theme.module';
+import { EagerThemeModule as CustomEagerThemeModule } from './custom/eager-theme.module';
+import { EagerThemeModule as DspaceEagerThemeModule } from './dspace/eager-theme.module';
 import { EagerThemeModule as FDAEagerThemeModule } from './fda/eager-theme.module';
 import { EagerThemeModule as GallatinSyllabiEagerThemeModule } from './gallatin-syllabi/eager-theme.module';
 
@@ -15,8 +15,9 @@ import { EagerThemeModule as GallatinSyllabiEagerThemeModule } from './gallatin-
  */
 @NgModule({
   imports: [
+    DspaceEagerThemeModule,
+    CustomEagerThemeModule,
     FDAEagerThemeModule,
-    CalabashEagerThemeModule,
     GallatinSyllabiEagerThemeModule ],
 })
 export class EagerThemesModule { }

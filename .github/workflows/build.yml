@@ -14,6 +14,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     env:
+      CI: true  # Set at job level
       # The ci step will test the dspace-angular code against DSpace REST.
       # Direct that step to utilize a DSpace REST service that has been started in docker.
       # NOTE: These settings should be kept in sync with those in [src]/docker/docker-compose-ci.yml
@@ -58,6 +59,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+
 
       # If CHROME_VERSION env variable specified above, then pin to that version.
       # Otherwise, just install latest version of Chrome.
@@ -108,6 +110,8 @@ jobs:
 
       - name: Run specs (unit tests)
         run: yarn run test:headless
+        env:
+          CI: true
 
 
       # Using "docker compose" start backend using CI configuration
@@ -117,6 +121,65 @@ jobs:
           docker compose -f ./docker/docker-compose-ci.yml up -d
           docker compose -f ./docker/cli.yml -f ./docker/cli.assetstore.yml run --rm dspace-cli
           docker container ls
+
+      - name: Create Test Data
+        id: testdata
+        run: |
+          chmod +x scripts/create-test-data.sh
+          ./scripts/create-test-data.sh
+        env:
+          DSPACE_REST_URL: http://localhost:8080/server
+          DSPACE_ADMIN_EMAIL: dspacedemo+admin@gmail.com
+          DSPACE_ADMIN_PASS: dspace
+
+      - name: Update Field Config with Collection Handles
+        run: |
+          echo "Updating item-field-config.ts with actual handles..."
+
+          # Get all collection handles from test data output
+          JONES_HANDLE="${{ steps.testdata.outputs.jones_collection_handle }}"
+          RELICS_HANDLE="${{ steps.testdata.outputs.relics_collection_handle }}"
+          LAEFER_HANDLE="${{ steps.testdata.outputs.laefer_collection_handle }}"
+          TANDON_HANDLE="${{ steps.testdata.outputs.tandon_collection_handle }}"
+          TANDONCAPSTONE_HANDLE="${{ steps.testdata.outputs.tandoncapstone_collection_handle }}"
+          DNP_HANDLE="${{ steps.testdata.outputs.dnp_collection_handle }}"
+          CALABASH_HANDLE="${{ steps.testdata.outputs.calabash_collection_handle }}"
+          OPENSCHOLARSHIP_HANDLE="${{ steps.testdata.outputs.openscholarship_collection_handle }}"
+          SYLLABI_HANDLE="${{ steps.testdata.outputs.syllabi_collection_handle }}"
+
+          echo "Jones Handle: $JONES_HANDLE"
+          echo "Relics Handle: $RELICS_HANDLE"
+
+          # Update the config file with actual handles
+          sed -i "s|handles: \['JONES_HANDLE'\]|handles: ['$JONES_HANDLE']|g" \
+            src/themes/fda/app/item-page/field-config/item-field-config.ts
+
+          sed -i "s|handles: \['RELICS_HANDLE'\]|handles: ['$RELICS_HANDLE']|g" \
+            src/themes/fda/app/item-page/field-config/item-field-config.ts
+
+          sed -i "s|handles: \['LAEFER_HANDLE'\]|handles: ['$LAEFER_HANDLE']|g" \
+            src/themes/fda/app/item-page/field-config/item-field-config.ts
+
+          sed -i "s|handles: \['TANDON_HANDLE'\]|handles: ['$TANDON_HANDLE']|g" \
+            src/themes/fda/app/item-page/field-config/item-field-config.ts
+
+          sed -i "s|handles: \['TANDONCAPSTONE_HANDLE'\]|handles: ['$TANDONCAPSTONE_HANDLE']|g" \
+            src/themes/fda/app/item-page/field-config/item-field-config.ts
+
+          sed -i "s|handles: \['DNP_HANDLE'\]|handles: ['$DNP_HANDLE']|g" \
+            src/themes/fda/app/item-page/field-config/item-field-config.ts
+
+          sed -i "s|handles: \['CALABASH_HANDLE'\]|handles: ['$CALABASH_HANDLE']|g" \
+            src/themes/fda/app/item-page/field-config/item-field-config.ts
+
+          sed -i "s|handles: \['OPENSCHOLARSHIP_HANDLE'\]|handles: ['$OPENSCHOLARSHIP_HANDLE']|g" \
+            src/themes/fda/app/item-page/field-config/item-field-config.ts
+
+          sed -i "s|handles: \['SYLLABI_HANDLE'\]|handles: ['$SYLLABI_HANDLE']|g" \
+            src/themes/fda/app/item-page/field-config/item-field-config.ts
+
+          echo "Updated config file:"
+          grep -A2 "handles:" src/themes/fda/app/item-page/field-config/item-field-config.ts || true
 
       # Run integration tests via Cypress.io
       # https://github.com/cypress-io/github-action
@@ -133,15 +196,20 @@ jobs:
           wait-on: http://127.0.0.1:8080/server/api/core/sites, http://127.0.0.1:4000
           # Wait for 2 mins max for everything to respond
           wait-on-timeout: 120
-
-      # Cypress always creates a video of all e2e tests (whether they succeeded or failed)
-      # Save those in an Artifact
-      - name: Upload e2e test videos to Artifacts
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: e2e-test-videos-${{ matrix.node-version }}
-          path: cypress/videos
+          # Don't reinstall dependencies
+          install: false
+        env:
+          # Pass test data UUIDs to Cypress
+          CYPRESS_DSPACE_TEST_FDA_DEFAULT_ITEM: ${{ steps.testdata.outputs.default_item_uuid }}
+          CYPRESS_DSPACE_TEST_JONES_ITEM: ${{ steps.testdata.outputs.jones_item_uuid }}
+          CYPRESS_DSPACE_TEST_RELICS_ITEM: ${{ steps.testdata.outputs.relics_item_uuid }}
+          CYPRESS_DSPACE_TEST_LAEFER_ITEM: ${{ steps.testdata.outputs.laefer_item_uuid }}
+          CYPRESS_DSPACE_TEST_TANDON_ITEM: ${{ steps.testdata.outputs.tandon_item_uuid }}
+          CYPRESS_DSPACE_TEST_TANDONCAPSTONE_ITEM: ${{ steps.testdata.outputs.tandoncapstone_item_uuid }}
+          CYPRESS_DSPACE_TEST_DNP_ITEM: ${{ steps.testdata.outputs.dnp_item_uuid }}
+          CYPRESS_DSPACE_TEST_CALABASH_ITEM: ${{ steps.testdata.outputs.calabash_item_uuid }}
+          CYPRESS_DSPACE_TEST_OPENSCHOLARSHIP_ITEM: ${{ steps.testdata.outputs.openscholarship_item_uuid }}
+          CYPRESS_DSPACE_TEST_SYLLABI_ITEM: ${{ steps.testdata.outputs.syllabi_item_uuid }}
 
       # If e2e tests fail, Cypress creates a screenshot of what happened
       # Save those in an Artifact
