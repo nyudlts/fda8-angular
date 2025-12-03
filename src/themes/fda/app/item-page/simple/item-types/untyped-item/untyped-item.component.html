@@ -78,6 +78,15 @@
 
       </ng-container>
 
+      <!-- Appears in Collections -->
+      <tr>
+        <td class="metadataFieldLabel">
+          {{'item.page.collectionslabel' | translate}}:
+        </td>
+        <td class="metadataFieldValue">
+          <ds-item-page-collections [item]="object" ></ds-item-page-collections>
+        </td>
+      </tr>
       </tbody>
     </table>
     <!-- Show Full Item Record Button -->
@@ -87,12 +96,6 @@
       </a>
     </div>
     <br/>
-    <!-- Collections (always shown) -->
-    <div class="panel panel-info">
-      <div class="panel-body">
-        <ds-item-page-collections [item]="object"></ds-item-page-collections>
-      </div>
-    </div>
 
     <!-- Files Panel -->
     <div class="panel panel-info">
