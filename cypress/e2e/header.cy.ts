@@ -11,7 +11,7 @@ describe('Header', () => {
     testA11y('ds-header');
   });
 
-  it('should allow for changing language to German (for example)', () => {
+  it.skip('skip as we do not  allow for changing language to German (for example)', () => {
     cy.visit('/');
 
     // Click the language switcher (globe) in header

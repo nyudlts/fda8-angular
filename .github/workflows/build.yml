@@ -200,7 +200,7 @@ jobs:
           install: false
         env:
           # Pass test data UUIDs to Cypress
-          CYPRESS_DSPACE_TEST_ENTITY_PUBLICATION: ${{ steps.testdata.outputs.default_item_uuid }}
+          CYPRESS_DSPACE_TEST_FDA_DEFAULT_ITEM: ${{ steps.testdata.outputs.default_item_uuid }}
           CYPRESS_DSPACE_TEST_JONES_ITEM: ${{ steps.testdata.outputs.jones_item_uuid }}
           CYPRESS_DSPACE_TEST_RELICS_ITEM: ${{ steps.testdata.outputs.relics_item_uuid }}
           CYPRESS_DSPACE_TEST_LAEFER_ITEM: ${{ steps.testdata.outputs.laefer_item_uuid }}

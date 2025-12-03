@@ -47,7 +47,7 @@ import {
 /**
 * Component that represents an untyped Item page
 */
-@listableObjectComponent(Item, ViewMode.StandalonePage, Context.Any,'fda')
+@listableObjectComponent(Item, ViewMode.StandalonePage, undefined,'fda')
 @Component({
   selector: 'ds-untyped-item',
   styleUrls: ['./untyped-item.component.scss'],
