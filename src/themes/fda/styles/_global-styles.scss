@@ -88,6 +88,22 @@ li:first-of-type .fda-syllabus-header {
   }
 }
 
+.fda-individual-item .panel {
+  background-color: #58058c0d;
+  margin-bottom: 3rem;
+
+  .simple-view-element-header {
+
+    padding: 1rem;
+    background-color: #58058c17;
+    margin-bottom: 0;
+  }
+
+  .simple-view-element-body {
+    padding: 1rem;
+  }
+}
+
 #expandable-navbar-section-browse_global {
 
   a[href*="topic"],
