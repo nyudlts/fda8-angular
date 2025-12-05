@@ -102,6 +102,37 @@ li:first-of-type .fda-syllabus-header {
   .simple-view-element-body {
     padding: 1rem;
   }
+
+  .simple-view-element-body .file-section {
+
+    ds-file-download-link {
+      border-bottom: 1px solid #58058c17;
+      display: block;
+
+      &:last-of-type {
+        border: none;
+        padding-bottom: .5rem;
+      }
+    }
+
+    .badge-primary {
+      margin-right: .5rem;
+    }
+
+    a {
+      display: inline-block;
+      line-height: 2rem;
+      font-weight: 600;
+
+      span:nth-child(2) {
+        color: darkslategray;
+        font-size: smaller;
+        display: inline-block;
+        margin-left: 5px;
+        font-weight: normal;
+      }
+    }
+  }
 }
 
 #expandable-navbar-section-browse_global {
