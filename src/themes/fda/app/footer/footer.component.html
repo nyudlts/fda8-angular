@@ -3,15 +3,16 @@
     <div class="content-container">
       <ul class="footer-info list-unstyled d-flex justify-content-center mb-0">
         <li>
-          <a routerLink="about" tabindex="0">About the Archive</a>
-        </li>
-        <li *ngIf="showCookieSettings">
-          <button class="btn btn-link text-white" type="button" (click)="openCookieSettings()" role="button" tabindex="0">
-            {{ 'footer.link.cookies' | translate}}
-          </button>
+          <a routerLink="info/about">About the Archive</a>
         </li>
         <li>
-          <a class="btn text-white" href="https://www.nyu.edu/footer/accessibility.html" tabindex="0">{{ 'footer.link.accessibility' | translate }} <span class="glyphicon glyphicon-new-window"></span></a>
+          <a href="https://support.nyu.edu/esc?id=kb_article&sysparm_article=KB0012311">Get Started &nbsp;<i class="fa fa-external-link fa-xs" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="https://www.nyu.edu/footer/accessibility.html">{{ 'footer.link.accessibility' | translate }} &nbsp;<i class="fa fa-external-link fa-xs" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a routerLink="info/about" fragment="rights">Rights</a>
         </li>
         <li *ngIf="showPrivacyPolicy">
           <a class="btn text-white" routerLink="info/privacy" role="link" tabindex="0">{{ 'footer.link.privacy-policy' | translate}}</a>
@@ -20,16 +21,7 @@
           <a class="btn text-white" routerLink="info/end-user-agreement" role="link" tabindex="0">{{ 'footer.link.end-user-agreement' | translate}}</a>
         </li>
         <li *ngIf="showSendFeedback$ | async">
-          <a class="btn text-white" routerLink="info/feedback" role="link" tabindex="0">{{ 'footer.link.feedback' | translate}}</a>
-        </li>
-        <li>
-          <a routerLink="help" tabindex="0">Help</a>
-        </li>
-        <li>
-          <a routerLink="contact" tabindex="0">Contact</a>
-        </li>
-        <li>
-          <a routerLink="rights" tabindex="0">Rights</a>
+          <a routerLink="info/feedback">{{ 'footer.link.feedback' | translate}}</a>
         </li>
       </ul>
     </div>
