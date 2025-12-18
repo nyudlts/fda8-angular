@@ -10,6 +10,7 @@ import { HomeNewsComponent } from './app/home-page/home-news/home-news.component
 import { TopLevelCommunityListComponent } from './app/home-page/top-level-community-list/top-level-community-list.component';
 import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
 import { NavbarComponent } from './app/navbar/navbar.component';
+import { ComcolPageBrowseByComponent } from './app/shared/comcol/comcol-page-browse-by/comcol-page-browse-by.component';
 import { BadgesComponent } from './app/shared/object-collection/shared/badges/badges.component';
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
@@ -31,6 +32,7 @@ const DECLARATIONS = [
   UntypedItemComponent,
   FooterComponent,
   BadgesComponent,
+  ComcolPageBrowseByComponent,
 ];
 
 @NgModule({
