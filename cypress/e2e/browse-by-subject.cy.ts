@@ -1,4 +1,3 @@
-import { testA11y } from 'cypress/support/utils';
 
 describe('Browse By Subject - Removed from FDA Theme', () => {
   it('should only show allowed browse types (title, author, dateissued)', () => {
