@@ -1,0 +1,54 @@
+<div class="submission-section-accessibility">
+  <div class="accessibility-content">
+    <!-- Main policy text -->
+    <div class="policy-text">
+      <p>
+        Authors and others who deposit documents to the repository are responsible for ensuring
+        digital content complies with the
+        <a href="https://www.nyu.edu/about/policies-guidelines-compliance/policies-and-guidelines/digital-accessibility-policy.html"
+           target="_blank"
+           rel="noopener noreferrer">
+          NYU Digital Accessibility Policy
+        </a>.
+      </p>
+
+      <p>
+        Please refer to these
+        <a href="https://guides.nyu.edu/accessibility"
+           target="_blank"
+           rel="noopener noreferrer">
+          Accessibility How-to Guides
+        </a>
+        when creating documents in a range of digital formats including Google Docs, Sheets, and Slides,
+        Microsoft Word, Adobe PDF, and PowerPoint.
+      </p>
+    </div>
+
+    <!-- Checkbox section -->
+    <div class="acknowledgment-section">
+      <label class="checkbox-container">
+        <input
+          type="checkbox"
+          class="checkbox-input"
+          [checked]="granted"
+          [disabled]="isDisabled"
+          (change)="onGrantedChange($event)"
+        />
+        <span class="checkbox-label">
+          I am aware of the
+          <a href="https://www.nyu.edu/about/policies-guidelines-compliance/policies-and-guidelines/digital-accessibility-policy.html"
+             target="_blank"
+             rel="noopener noreferrer">
+            NYU Digital Accessibility Policy
+          </a>.
+        </span>
+      </label>
+    </div>
+
+    <!-- Error message - shows when not checked and user tries to proceed -->
+    <div *ngIf="!granted" class="alert alert-danger" style="margin-top: 1rem;">
+      <i class="fas fa-exclamation-triangle"></i>
+      {{ 'error.validation.accessibility.required' | translate }}
+    </div>
+  </div>
+</div>
