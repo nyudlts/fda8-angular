@@ -1,7 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { RootModule } from '../../app/root.module';
+import { renderSectionFor } from '../../app/submission/sections/sections-decorator';
+import { SectionsType } from '../../app/submission/sections/sections-type';
 import { CommunityPageSubCollectionListComponent } from './app/community-page/sections/sub-com-col-section/sub-collection-list/community-page-sub-collection-list.component';
 import { FooterComponent } from './app/footer/footer.component';
 import { HeaderComponent } from './app/header/header.component';
@@ -12,17 +16,21 @@ import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-
 import { NavbarComponent } from './app/navbar/navbar.component';
 import { ComcolPageBrowseByComponent } from './app/shared/comcol/comcol-page-browse-by/comcol-page-browse-by.component';
 import { BadgesComponent } from './app/shared/object-collection/shared/badges/badges.component';
+import { SubmissionSectionAccessibilityComponent } from './app/submission/sections/accessibility/section-accessibility.component';
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
  * This will ensure that decorator gets picked up when the app loads
  */
+renderSectionFor(SectionsType.Accessibility)(SubmissionSectionAccessibilityComponent);
+
 const ENTRY_COMPONENTS = [
   UntypedItemComponent,
+  SubmissionSectionAccessibilityComponent,
 ];
 
 
 const DECLARATIONS = [
-  ...ENTRY_COMPONENTS,
+  UntypedItemComponent,
   HomeNewsComponent,
   HeaderComponent,
   HeaderNavbarWrapperComponent,
@@ -39,9 +47,14 @@ const DECLARATIONS = [
   imports: [
     CommonModule,
     RootModule,
+    TranslateModule,
+    FormsModule,
     ...DECLARATIONS,
   ],
-  declarations: [],
+  declarations: [SubmissionSectionAccessibilityComponent],
+  exports: [
+    SubmissionSectionAccessibilityComponent,
+  ],
   providers: [
     ...ENTRY_COMPONENTS.map((component) => ({ provide: component })),
   ],

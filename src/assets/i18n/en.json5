@@ -6572,6 +6572,8 @@
 
   "submission.sections.submit.progressbar.coarnotify": "COAR Notify",
 
+  "submission.sections.submit.progressbar.accessibility": "Accessibility Guidelines",
+
   "submission.section.section-coar-notify.control.request-review.label": "You can request a review to one of the following services",
 
   "submission.section.section-coar-notify.control.request-endorsement.label": "You can request an Endorsement to one of the following overlay journals",
@@ -7339,4 +7341,18 @@
   "item.page.identifier.coursenumber": "Course Number",
 
   "item.page.description.semester": "Semester",
+
+  "submission.sections.accessibility.description": "Please review our accessibility guidelines and confirm you understand the requirements.",
+
+  "submission.sections.accessibility.view-guidelines": "View Accessibility Guidelines",
+
+  "submission.sections.accessibility.acknowledge": "I have read and understand the accessibility guidelines",
+
+  "submission.sections.accessibility.acknowledged": "Thank you for acknowledging the accessibility guidelines.",
+
+  "submission.sections.accessibility.required": "You must acknowledge the accessibility guidelines before proceeding.",
+
+  "submission.sections.accessibility.processing": "Processing...",
+
+  "error.validation.accessibility.required": "You must acknowledge the accessibility guidelines before proceeding.",
 }

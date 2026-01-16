@@ -175,4 +175,15 @@
   "item.page.prism.endingPage": "Ending Page",
   "item.page.identifier.coursenumber": "Course Number",
   "item.page.description.semester": "Semester",
+
+  "submission.sections.submit.progressbar.accessibility": "Accessibility Guidelines",
+  "submission.sections.accessibility.description": "Please review our accessibility guidelines and confirm you understand the requirements.",
+  "submission.sections.accessibility.view-guidelines": "View Accessibility Guidelines",
+  "submission.sections.accessibility.acknowledge": "I have read and understand the accessibility guidelines",
+  "submission.sections.accessibility.acknowledged": "Thank you for acknowledging the accessibility guidelines.",
+  "submission.sections.accessibility.required": "You must acknowledge the accessibility guidelines before proceeding.",
+  "submission.sections.accessibility.processing": "Processing...",
+  "error.validation.accessibility.required": "You must acknowledge the accessibility guidelines before proceeding.",
+
+
 }
