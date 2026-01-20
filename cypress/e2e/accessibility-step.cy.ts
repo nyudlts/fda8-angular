@@ -13,7 +13,7 @@ describe('Accessibility Step', () => {
           method: 'POST',
           url: '/server/api/core/metadatafields',
           body: field,
-          failOnStatusCode: false
+          failOnStatusCode: false,
         });
       });
     });
