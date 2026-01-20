@@ -1,0 +1,16 @@
+{
+  "metadataFields": [
+    {
+      "schema": "local",
+      "element": "accessibility",
+      "qualifier": "acknowledged",
+      "scopeNote": "Accessibility guidelines acknowledgment status"
+    },
+    {
+      "schema": "local",
+      "element": "accessibility",
+      "qualifier": "acknowledgedDate",
+      "scopeNote": "Date when accessibility guidelines were acknowledged"
+    }
+  ]
+}

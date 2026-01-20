@@ -6,6 +6,19 @@ describe('Accessibility Step', () => {
   const TEST_COLLECTION = 'Test Collection';
   const TEST_COMMUNITY = 'Test Community';
 
+  before(() => {
+    cy.fixture('accessibility-metadata').then((data) => {
+      data.metadataFields.forEach((field) => {
+        cy.request({
+          method: 'POST',
+          url: '/server/api/core/metadatafields',
+          body: field,
+          failOnStatusCode: false
+        });
+      });
+    });
+  });
+
   beforeEach(() => {
     // Login before each test
     cy.visit('/login');
