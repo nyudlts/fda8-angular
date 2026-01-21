@@ -1,14 +1,24 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { ChangeDetectorRef, NO_ERRORS_SCHEMA } from '@angular/core';
-import { of as observableOf } from 'rxjs';
+import {
+  ChangeDetectorRef,
+  NO_ERRORS_SCHEMA,
+} from '@angular/core';
+import {
+  ComponentFixture,
+  TestBed,
+  waitForAsync,
+} from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import {
+  TranslateLoader,
+  TranslateModule,
+} from '@ngx-translate/core';
+import { of as observableOf } from 'rxjs';
 
-import { SubmissionSectionAccessibilityComponent } from './section-accessibility.component';
-import { SectionsService } from '../../../../../../app/submission/sections/sections.service';
-import { SubmissionService } from '../../../../../../app/submission/submission.service';
 import { JsonPatchOperationsBuilder } from '../../../../../../app/core/json-patch/builder/json-patch-operations-builder';
 import { TranslateLoaderMock } from '../../../../../../app/shared/mocks/translate-loader.mock';
+import { SectionsService } from '../../../../../../app/submission/sections/sections.service';
+import { SubmissionService } from '../../../../../../app/submission/submission.service';
+import { SubmissionSectionAccessibilityComponent } from './section-accessibility.component';
 
 describe('SubmissionSectionAccessibilityComponent', () => {
   let component: SubmissionSectionAccessibilityComponent;
@@ -27,7 +37,7 @@ describe('SubmissionSectionAccessibilityComponent', () => {
     errorsToShow: [],
     serverValidationErrors: [],
     isLoading: false,
-    isValid: false
+    isValid: false,
   };
 
   const mockSubmissionId = '1234';
@@ -37,17 +47,17 @@ describe('SubmissionSectionAccessibilityComponent', () => {
     sectionsService = jasmine.createSpyObj('SectionsService', [
       'dispatchRemoveSectionErrors',
       'setSectionStatus',
-      'isSectionReadOnly'
+      'isSectionReadOnly',
     ]);
 
     submissionService = jasmine.createSpyObj('SubmissionService', [
       'dispatchSaveSection',
-      'getSubmissionScope'
+      'getSubmissionScope',
     ]);
 
     operationsBuilder = jasmine.createSpyObj('JsonPatchOperationsBuilder', [
       'add',
-      'remove'
+      'remove',
     ]);
 
     sectionsService.isSectionReadOnly.and.returnValue(observableOf(false));
@@ -59,9 +69,9 @@ describe('SubmissionSectionAccessibilityComponent', () => {
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
-            useClass: TranslateLoaderMock
-          }
-        })
+            useClass: TranslateLoaderMock,
+          },
+        }),
       ],
       providers: [
         { provide: SectionsService, useValue: sectionsService },
@@ -70,9 +80,9 @@ describe('SubmissionSectionAccessibilityComponent', () => {
         { provide: ChangeDetectorRef, useValue: { detectChanges: () => {} } },
         { provide: 'sectionDataProvider', useValue: mockSectionData },
         { provide: 'submissionIdProvider', useValue: mockSubmissionId },
-        { provide: 'collectionIdProvider', useValue: mockCollectionId }
+        { provide: 'collectionIdProvider', useValue: mockCollectionId },
       ],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   }));
 
@@ -149,7 +159,7 @@ describe('SubmissionSectionAccessibilityComponent', () => {
 
       expect(submissionService.dispatchSaveSection).toHaveBeenCalledWith(
         mockSubmissionId,
-        'accessibility'
+        'accessibility',
       );
     });
 
@@ -161,7 +171,7 @@ describe('SubmissionSectionAccessibilityComponent', () => {
       expect(sectionsService.setSectionStatus).toHaveBeenCalledWith(
         mockSubmissionId,
         'accessibility',
-        true
+        true,
       );
     });
   });
@@ -179,7 +189,7 @@ describe('SubmissionSectionAccessibilityComponent', () => {
       expect(sectionsService.setSectionStatus).toHaveBeenCalledWith(
         mockSubmissionId,
         'accessibility',
-        false
+        false,
       );
     });
 
@@ -191,7 +201,7 @@ describe('SubmissionSectionAccessibilityComponent', () => {
       expect(sectionsService.setSectionStatus).toHaveBeenCalledWith(
         mockSubmissionId,
         'accessibility',
-        true
+        true,
       );
     });
   });
