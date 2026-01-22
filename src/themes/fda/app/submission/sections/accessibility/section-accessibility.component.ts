@@ -58,38 +58,38 @@ export class SubmissionSectionAccessibilityComponent extends SectionModelCompone
   }
 
   onSectionInit() {
-  this.pathCombiner = new JsonPatchOperationPathCombiner('sections', this.sectionData.id);
+    this.pathCombiner = new JsonPatchOperationPathCombiner('sections', this.sectionData.id);
 
-  // Load the saved acknowledgment status from backend
-  console.log('=== Accessibility Section Initialized ===');
-  console.log('Section data:', this.sectionData);
+    // Load the saved acknowledgment status from backend
+    console.log('=== Accessibility Section Initialized ===');
+    console.log('Section data:', this.sectionData);
 
-  // Check if accessibility was already granted (loaded from backend)
-  const sectionData = this.sectionData as any;
-  if (sectionData?.data?.granted === true) {
-    this.granted = true;
-    console.log('Loaded saved value - Accessibility already granted');
-  } else {
-    this.granted = false;
-    console.log('No saved acknowledgment found - User must check box');
+    // Check if accessibility was already granted (loaded from backend)
+    const sectionData = this.sectionData as any;
+    if (sectionData?.data?.granted === true) {
+      this.granted = true;
+      console.log('Loaded saved value - Accessibility already granted');
+    } else {
+      this.granted = false;
+      console.log('No saved acknowledgment found - User must check box');
+    }
+
+    console.log('Granted:', this.granted);
+
+    this.subs.push(
+      this.sectionService.isSectionReadOnly(
+        this.submissionId,
+        this.sectionData.id,
+        this.submissionService.getSubmissionScope(),
+      ).pipe(
+        take(1),
+        filter((isReadOnly: boolean) => isReadOnly),
+      ).subscribe(() => {
+        this.isDisabled = true;
+        console.log('Section is read-only');
+      }),
+    );
   }
-
-  console.log('Granted:', this.granted);
-
-  this.subs.push(
-    this.sectionService.isSectionReadOnly(
-      this.submissionId,
-      this.sectionData.id,
-      this.submissionService.getSubmissionScope(),
-    ).pipe(
-      take(1),
-      filter((isReadOnly: boolean) => isReadOnly),
-    ).subscribe(() => {
-      this.isDisabled = true;
-      console.log('Section is read-only');
-    }),
-  );
-}
 
   ngAfterViewChecked(): void {
     this.changeDetectorRef.detectChanges();
